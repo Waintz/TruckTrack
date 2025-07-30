@@ -6,8 +6,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['DMSansRegular', 'sans-serif'],
+        bold: ['DMSansBold', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
-// tailwind.config.js

@@ -1,0 +1,1 @@
+export const HERO_TITLE = "TruckTrack — контроль фур и загрузки в реальном времени";
