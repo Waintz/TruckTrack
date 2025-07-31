@@ -1,6 +1,8 @@
-export function CheckCircle() {
+import clsx from "clsx"
+
+export function CheckCircle({className}: {className: string}) {
   return (
-    <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-[#4A6CF7]">
+    <span className={clsx("inline-flex items-center justify-center w-4 h-4 rounded-full bg-[#4A6CF7]", className)}>
       <svg
         className="w-2.5 h-2.5 text-white"
         fill="none"
