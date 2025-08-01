@@ -10,14 +10,24 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 export default function Home() {
   return (
-    <main className="container mx-auto p-4 mt-10">
-      <HeroSection />
-      <PartnersSection className="mt-20" />
-      <ServiceIntro />
-      <HowItWorksSection />
-      <TeamSection />
-      <TestimonialsSection />
-      <FAQSection className="mt-20" />
-    </main>
+    <>
+      <main className="container mx-auto p-4 mt-10">
+        <HeroSection />
+      </main>
+
+      <section className="bg-gray-100/50 py-15 flex items-center mt-20">
+        <div className="container mx-auto px-4">
+          <PartnersSection className="" />
+        </div>
+      </section>
+
+      <main className="container mx-auto p-4">
+        <ServiceIntro />
+        <HowItWorksSection />
+        <TeamSection />
+        <TestimonialsSection />
+        <FAQSection className="mt-20" />
+      </main>
+    </>
   );
 }

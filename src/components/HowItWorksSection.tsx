@@ -26,7 +26,7 @@ export function HowItWorksSection({ className }: { className?: string }) {
 
   return (
     <section className={clsx("mt-20 px-4 max-w-3xl mx-auto", className)}>
-      <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center">
+      <h2 className="text-2xl md:text-3xl font-semibold mb-10 text-center">
         Лёгкий процесс подключения к TruckTrack
       </h2>
       <ul className="flex flex-col gap-8">

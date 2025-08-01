@@ -18,7 +18,7 @@ export const FAQSection = ({
       {frequentlyAskedQuestions && (
         <section className="mt-10">
           <header>
-            <h1 className="font-bold text-[22px]">{FAQ_TITLE}</h1>
+            <h1 className="font-semibold text-[22px]">{FAQ_TITLE}</h1>
           </header>
         </section>
       )}

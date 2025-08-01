@@ -1,4 +1,4 @@
-import logoTruck from "@/assets/TruckTrack.svg";
+import logoTruck from "@/assets/truck/TruckTrack.svg";
 import Image from "next/image";
 
 export function Logo() {

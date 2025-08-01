@@ -1,17 +1,20 @@
 import clsx from "clsx";
+import VladislavZ from '@/assets/teams/Vladislav.svg'
 import Image from "next/image";
+
+import type { StaticImageData } from "next/image";
 
 type TeamMember = {
   name: string;
   role: string;
-  image: string; // Путь к изображению или импорт
+  image: string | StaticImageData;
 };
 
 const team: TeamMember[] = [
   {
     name: "Владислав З.",
     role: "Основатель / Frontend Developer",
-    image: "/team/vlad.png",
+    image: VladislavZ,
   },
   {
     name: "Мария П.",
@@ -33,7 +36,7 @@ const team: TeamMember[] = [
 export function TeamSection({ className }: { className?: string }) {
   return (
     <section className={clsx("mt-20 px-4 max-w-6xl mx-auto", className)}>
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
         Наша команда
       </h2>
       <ul className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
