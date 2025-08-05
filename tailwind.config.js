@@ -13,7 +13,10 @@ module.exports = {
       },
       screens: {
         'xsm': '500px'
-      }
+      },
+      scrollMargin: {
+        header: "7rem",
+      },
     },
   },
   plugins: [],

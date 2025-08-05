@@ -1,17 +1,22 @@
+"use client";
+
+import { useRegisterSection } from "@/hooks/useRegisterSection";
 import { Logo } from "../Logo";
 import { SocialIcons } from "../SocialIcons";
 
 export function Footer() {
+  const setRef = useRegisterSection("contacts");
+
   return (
-    <footer className="container mx-auto p-4 mt-15">
+    <footer ref={setRef} className="container mx-auto p-4 mt-15 scroll-mt-header">
       <article className="flex max-w-4xl justify-between">
         <section className="w-1/2 hidden lg:flex lg:flex-col gap-5 ">
-            <h1 className="font-semibold">
-              <Logo />
-            </h1>
-            <section >
-              <SocialIcons className="flex w-28 gap-3 ml-8" />
-            </section>
+          <h1 className="font-semibold">
+            <Logo />
+          </h1>
+          <section>
+            <SocialIcons className="flex w-28 gap-3 ml-8" />
+          </section>
         </section>
         <section className="w-1/2">
           <header>

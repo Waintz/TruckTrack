@@ -1,13 +1,19 @@
+'use client';
+
 import clsx from "clsx";
 import truck from "@/assets/truck/DrivenByInsight.svg";
 import Image from "next/image";
 import { ApprovalCard } from "./ApprovalCard";
 import { SERVICE_TAGLINE } from "@/constants/texts";
+import { useRegisterSection } from "@/hooks/useRegisterSection";
 
 export function ServiceIntro({ className }: { className?: string }) {
+  const setRef = useRegisterSection("about");
+
   return (
     <section
-      className={clsx("mt-20 px-4 lg:flex lg:justify-around", className)}
+      ref={setRef}
+      className={clsx("mt-20 px-4 lg:flex lg:justify-around scroll-mt-header", className)}
     >
       <section>
         <h1 className="font-extrabold text-4xl md:text-5xl relative inline-block mb-6">

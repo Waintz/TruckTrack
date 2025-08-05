@@ -1,3 +1,5 @@
+'use client';
+
 import { RequestCallButton } from "../RequestCallButton";
 import { Logo } from "../Logo";
 import { NavMenu } from "../NavMenu";
