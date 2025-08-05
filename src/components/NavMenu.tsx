@@ -1,11 +1,28 @@
+"use client";
+
+import { HEADER_NAV_MENU } from "@/constants/texts";
+import { useScroll } from "@/providers/ScrollContext";
+
 export function NavMenu() {
+  const { scrollToSection } = useScroll();
+
   return (
-    <nav className="hidden lg:flex h-10 items-center" aria-label="Основное меню">
+    <nav
+      className="hidden lg:flex h-10 items-center"
+      aria-label="Основное меню"
+    >
       <ul className="flex gap-5 items-center">
-        <li className="cursor-pointer">О нас</li>
-        <li className="cursor-pointer">Команда</li>
-        <li className="cursor-pointer">Отзывы</li>
-        <li className="cursor-pointer">Контакты</li>
+        {HEADER_NAV_MENU.map((e) => {
+          return (
+            <li
+              key={e.nameSection}
+              onClick={() => scrollToSection(e.nameSection)}
+              className="cursor-pointer"
+            >
+              {e.name}
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
