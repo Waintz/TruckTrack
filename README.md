@@ -4,7 +4,8 @@
 # next js
 # typescipt
 # eslint
-# 
+# react
+# shadcn
 
 ```
 
