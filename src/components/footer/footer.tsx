@@ -1,15 +1,21 @@
-import Image from "next/image";
-import telegram from '@/assets/telegram.svg'
-import youtube from '@/assets/youtube.svg'
-import instagram from '@/assets/instagram.svg'
+import { Logo } from "../Logo";
+import { SocialIcons } from "../SocialIcons";
 
 export function Footer() {
   return (
     <footer className="container mx-auto p-4 mt-15">
-      <article className="flex justify-between">
+      <article className="flex max-w-4xl justify-between">
+        <section className="w-1/2 hidden lg:flex lg:flex-col gap-5 ">
+            <h1 className="font-semibold">
+              <Logo />
+            </h1>
+            <section >
+              <SocialIcons className="flex w-28 gap-3 ml-8" />
+            </section>
+        </section>
         <section className="w-1/2">
           <header>
-            <h1 className="font-bold">Навигация</h1>
+            <h1 className="font-semibold">Навигация</h1>
           </header>
           <section className="flex flex-col gap-1 mt-3 opacity-50">
             <p>Главная</p>
@@ -22,22 +28,20 @@ export function Footer() {
         </section>
         <section className="w-1/2">
           <header>
-            <h1 className="font-bold">Контакты</h1>
+            <h1 className="font-semibold">Контакты</h1>
           </header>
-          <section className="flex flex-col gap-1 mt-3 opacity-50">
+          <section className="flex flex-col gap-2 mt-3 opacity-50">
             <p>Email: zvlad9923@gmail.com</p>
             <p>Телефон: 093 105 88 88</p>
             <p>Адрес: ул. Плешева. 7ст18 Киев</p>
           </section>
         </section>
       </article>
-      <section className="mt-20 flex gap-5">
-        <Image alt="telegram" src={telegram} width='35' height='35' />
-        <Image alt="youtube" src={youtube} width='35' height='35' />
-        <Image alt="instagram" src={instagram} width='35' height='35' />
+      <section className="block lg:hidden mt-20">
+        <SocialIcons className="flex gap-4" />
       </section>
-      <section className="border-t border-black/20 mt-5">
-        <h1 className="mt-5 font-bold text-center text-black/20 text-[13px]">
+      <section className="border-t border-black/20 mt-10">
+        <h1 className="mt-5 font-bold text-center lg:text-left text-black/25 text-[13px]">
           Copyright &copy; 2025 ООО Truck Track | Все права защищены
         </h1>
       </section>

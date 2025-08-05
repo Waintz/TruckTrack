@@ -1,4 +1,3 @@
-// components/ApprovalCard.tsx
 interface IApprovalCardProps {
   title: string;
   percent: string;

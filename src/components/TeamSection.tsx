@@ -1,46 +1,15 @@
+import { TEAM } from "@/constants/team";
 import clsx from "clsx";
-import VladislavZ from '@/assets/teams/Vladislav.svg'
 import Image from "next/image";
-
-import type { StaticImageData } from "next/image";
-
-type TeamMember = {
-  name: string;
-  role: string;
-  image: string | StaticImageData;
-};
-
-const team: TeamMember[] = [
-  {
-    name: "Владислав З.",
-    role: "Основатель / Frontend Developer",
-    image: VladislavZ,
-  },
-  {
-    name: "Мария П.",
-    role: "UI/UX Designer",
-    image: "/team/maria.png",
-  },
-  {
-    name: "Игорь К.",
-    role: "Backend Developer",
-    image: "/team/igor.png",
-  },
-  {
-    name: "Алина С.",
-    role: "Project Manager",
-    image: "/team/alina.png",
-  },
-];
 
 export function TeamSection({ className }: { className?: string }) {
   return (
-    <section className={clsx("mt-20 px-4 max-w-6xl mx-auto", className)}>
+    <section className={clsx("px-4 max-w-6xl mx-auto", className)}>
       <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
         Наша команда
       </h2>
       <ul className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
-        {team.map((member, index) => (
+        {TEAM.map((member, index) => (
           <li key={index} className="text-center">
             <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-[#4A6CF7] mb-4">
               <Image

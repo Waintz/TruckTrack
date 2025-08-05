@@ -22,12 +22,12 @@ export const FAQSection = ({
           </header>
         </section>
       )}
-      <section className="mt-2">
+      <section className="mt-5">
         <Accordion type="single" collapsible>
           {FAQ_QUESTIONS.map((item, index) => {
             return (
               <AccordionItem value={`item-${index}`} key={index}>
-                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionTrigger className="font-semibold text-[15px]">{item.question}</AccordionTrigger>
                 <AccordionContent>{item.answer}</AccordionContent>
               </AccordionItem>
             );

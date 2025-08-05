@@ -8,6 +8,8 @@ import { ServiceIntro } from "@/components/ServiceIntro";
 import { TeamSection } from "@/components/TeamSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 
+// SocialIcons вынести Social в константу
+
 export default function Home() {
   return (
     <>
@@ -23,10 +25,18 @@ export default function Home() {
 
       <main className="container mx-auto p-4">
         <ServiceIntro />
-        <HowItWorksSection />
-        <TeamSection />
+      </main>
+
+      <section className="bg-gray-100/50 py-15 flex items-center mt-20">
+        <div className="container mx-auto px-4">
+          <HowItWorksSection />
+        </div>
+      </section>
+
+      <main className="container mx-auto p-4">
+        <TeamSection className="mt-25" />
         <TestimonialsSection />
-        <FAQSection className="mt-20" />
+        <FAQSection className="max-w-6xl mx-auto px-4 mt-25" />
       </main>
     </>
   );
