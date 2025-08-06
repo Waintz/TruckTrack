@@ -1,4 +1,8 @@
 // HERO SECTION -------------------------------------------------- //
+import telegram from '@/assets/social/telegram.svg'
+import github from '@/assets/social/github.svg'
+import instagram from '@/assets/social/instagram.svg'
+import { StaticImageData } from "next/image";
 
 export const HERO_TITLE =
   "TruckTrack — контроль фур и загрузки в реальном времени";
@@ -16,9 +20,14 @@ export const SERVICE_TAGLINE =
 
 // FAQ SECTION ---------------------------------------------------- //
 
+export type FaqQuestions = {
+  question: string;
+  answer: string;
+}
+
 export const FAQ_TITLE = "Часто задаваемые вопросы";
 
-export const FAQ_QUESTIONS = [
+export const FAQ_QUESTIONS: FaqQuestions[] = [
   {
     question: "Как происходит отслеживание фур?",
     answer:
@@ -108,4 +117,34 @@ export const HEADER_NAV_MENU: HeaderNav[] = [
     nameSection: 'contacts'
   },
   
+]
+
+// SOCIAL ICONS
+
+export interface ISocialIcons {
+  id: number;
+  name: string;
+  img: string | StaticImageData;
+  url: string;
+} 
+
+export const SOCIAL_ICONS: ISocialIcons[] = [
+  {
+    id: 1,
+    name: 'telegram',
+    img: telegram,
+    url: 'https://t.me/Tackerl'
+  },
+  {
+    id: 2,
+    name: 'github',
+    img: github,
+    url: 'https://github.com/Waintz'
+  },
+  {
+    id: 3,
+    name: 'instagram',
+    img: instagram,
+    url: 'https://www.instagram.com/vlad_zgonnyk/'
+  }
 ]
