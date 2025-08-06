@@ -1,7 +1,5 @@
 import Image from "next/image";
-import telegram from '@/assets/telegram.svg'
-import youtube from '@/assets/youtube.svg'
-import instagram from '@/assets/instagram.svg'
+import { SOCIAL_ICONS } from "@/constants/texts";
 
 interface Props {
   className?: string;
@@ -9,18 +7,18 @@ interface Props {
   height?: number;
 }
 
-export function SocialIcons({className, height = 35, width = 35}: Props) {
+export function SocialIcons({ className, height = 35, width = 35 }: Props) {
   return (
     <ul className={className}>
-      <li>
-        <Image alt="telegram" src={telegram} width={width} height={height} />
-      </li>
-      <li>
-        <Image alt="youtube" src={youtube} width={width} height={height} />
-      </li>
-      <li>
-        <Image alt="instagram" src={instagram} width={width} height={height} />
-      </li>
+      {SOCIAL_ICONS.map((e) => {
+        return (
+          <li key={e.id}>
+            <a href={e.url} target="_blank" rel="noopener noreferrer">
+              <Image alt={e.name} src={e.img} width={width} height={height} />
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 }
