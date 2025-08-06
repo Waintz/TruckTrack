@@ -1,3 +1,5 @@
+'use client';
+
 import { TESTIMONIALS } from "@/constants/texts";
 import { useRegisterSection } from "@/hooks/useRegisterSection";
 import clsx from "clsx";

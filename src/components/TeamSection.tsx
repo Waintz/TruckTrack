@@ -1,3 +1,5 @@
+'use client';
+
 import { TEAM } from "@/constants/team";
 import { useRegisterSection } from "@/hooks/useRegisterSection";
 import clsx from "clsx";

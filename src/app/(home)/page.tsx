@@ -1,9 +1,9 @@
-"use client";
+export const dynamic = "force-static";
 
 import { FAQSection } from "@/components/FAQSection";
 import { HeroSection } from "@/components/HeroSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { PartnersSection } from "@/components/PartnersSection";
+import { PartnersSection } from "@/components/partnersSection/PartnersSection";
 import { ServiceIntro } from "@/components/ServiceIntro";
 import { TeamSection } from "@/components/TeamSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
