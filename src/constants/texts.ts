@@ -139,7 +139,7 @@ export const SOCIAL_ICONS: ISocialIcons[] = [
     id: 2,
     name: 'github',
     img: github,
-    url: '2'
+    url: 'https://github.com/Waintz'
   },
   {
     id: 3,
