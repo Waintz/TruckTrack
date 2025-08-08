@@ -1,9 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { PaginationControls } from "../../elements/buttons/PaginationControls";
 import { PARTNERS } from "@/constants/partners";
 import usePartnersController from "@/hooks/usePartnersController";
+import { PartnersMobileSection } from "./ui/PartnersMobileSection";
+import { PartnersDesktopSection } from "./ui/PartnersDesktopSection";
+import { PartnersHeader } from "./ui/PartnersHeader";
 
 export function PartnersSection({ className }: { className?: string }) {
   const {
@@ -17,60 +19,17 @@ export function PartnersSection({ className }: { className?: string }) {
 
   return (
     <section aria-labelledby="partners-heading" className={className}>
-      <h2 className="text-3xl md:text-4xl font-semibold text-center">
-        Наши партнёрские{" "}
-        <span className="text-[#4A6CF7] inline-flex items-center whitespace-nowrap">
-          платформы
-          <span className="ml-2 w-6 h-1 bg-[#4A6CF7] rounded"></span>
-        </span>
-      </h2>
+      {/* HEADER - для всех устройств */}
+
+      <PartnersHeader />
 
       {/* MOBILE — слайдер */}
-      <div className="lg:hidden overflow-hidden w-40 h-[320px] mx-auto mt-14 relative">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentPage * 100}%)` }}
-        >
-          {partnerChunks.map((group, index) => (
-            <ul
-              key={index}
-              className="flex flex-col gap-9 w-40 shrink-0"
-              style={{ height: "320px" }}
-            >
-              {group.map((p) => (
-                <li key={p.id} className="w-40 h-10">
-                  <a target="_blank" rel="noopener noreferrer" href={p.link}>
-                    <Image
-                      width={p.width}
-                      height={p.height}
-                      alt={p.name}
-                      src={p.img}
-                      className="w-full h-full object-contain"
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </div>
 
-      {/* DESKTOP — грид всех партнёров */}
-      <ul className="hidden lg:grid grid-cols-1 lg:grid-cols-4 gap-y-7 gap-x-10 mt-14 mx-auto w-max">
-        {PARTNERS.map((p) => (
-          <li key={p.id} className="w-40 h-10">
-            <a target="_blank" rel="noopener noreferrer" href={p.link}>
-              <Image
-                width={p.width}
-                height={p.height}
-                alt={p.name}
-                src={p.img}
-                className="w-full h-full object-contain"
-              />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <PartnersMobileSection
+        className="lg:hidden"
+        currentPage={currentPage}
+        partnersChunks={partnerChunks}
+      />
 
       <PaginationControls
         onClickLeft={handleLeft}
@@ -79,6 +38,10 @@ export function PartnersSection({ className }: { className?: string }) {
         disableRightArrow={stateRightArrow}
         className="flex lg:hidden justify-center mt-9 gap-10"
       />
+
+      {/* DESKTOP — грид всех партнёров */}
+
+      <PartnersDesktopSection PARTNERS={PARTNERS} />
     </section>
   );
 }

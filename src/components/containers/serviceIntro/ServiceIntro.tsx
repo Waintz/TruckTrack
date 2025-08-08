@@ -1,10 +1,12 @@
-'use client';
+"use client";
 
 import clsx from "clsx";
 import Image from "next/image";
 import { ApprovalCard } from "../../ui/cards/ApprovalCard";
 import { SERVICE_TAGLINE } from "@/constants/texts";
 import { useRegisterSection } from "@/hooks/useRegisterSection";
+import { ServiceIntroHeader } from "./ui/ServiceIntroHeader";
+import { ServiceIntroCards } from "./ui/ServiceIntroCards";
 
 export function ServiceIntro({ className }: { className?: string }) {
   const setRef = useRegisterSection("about");
@@ -12,35 +14,23 @@ export function ServiceIntro({ className }: { className?: string }) {
   return (
     <section
       ref={setRef}
-      className={clsx("mt-20 px-4 lg:flex lg:justify-around scroll-mt-header", className)}
+      className={clsx(
+        "mt-20 px-4 lg:flex lg:justify-around scroll-mt-header",
+        className
+      )}
     >
-      <section>
-        <h1 className="font-extrabold text-4xl md:text-5xl relative inline-block mb-6">
-          Truck
-          <span className="text-[#4A6CF7] relative ml-2">
-            Track
-            <span className="absolute -bottom-1 left-0 w-full h-1 rounded bg-[#4A6CF7]"></span>
-          </span>
-        </h1>
-        <h3 className="text-gray-700 text-lg md:text-xl lg:w-3/4 leading-relaxed max-w-3xl mb-12">
-          {SERVICE_TAGLINE}
-        </h3>
+      <div>
+        <ServiceIntroHeader />
 
-        <div className="flex gap-4 overflow-x-auto whitespace-nowrap pb-2 -mx-4 px-4">
-          <ApprovalCard
-            title="Один партнёр"
-            percent="10–40%"
-            description="Процент одобрения заявок"
-          />
-          <ApprovalCard
-            title="Несколько партнёров"
-            percent="до 85%"
-            description="Процент одобрения возрастает"
-          />
-        </div>
-      </section>
+        <ServiceIntroCards />
+      </div>
       <section className="hidden lg:block">
-        <Image width={480} height={480} src="/truck/DrivenByInsight.svg" alt="test" />
+        <Image
+          width={480}
+          height={480}
+          src="/truck/DrivenByInsight.svg"
+          alt="test"
+        />
       </section>
     </section>
   );
