@@ -1,10 +1,5 @@
 import { FAQ_QUESTIONS, FAQ_TITLE } from "@/constants/texts";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../accordion/accordion";
+import { FAQAccordion } from "./ui/FAQAccordion";
 
 export const FAQSection = ({
   frequentlyAskedQuestions = true,
@@ -23,16 +18,7 @@ export const FAQSection = ({
         </section>
       )}
       <section className="mt-5">
-        <Accordion type="single" collapsible>
-          {FAQ_QUESTIONS.map((item, index) => {
-            return (
-              <AccordionItem value={`item-${index}`} key={index}>
-                <AccordionTrigger className="font-semibold text-[15px]">{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
-              </AccordionItem>
-            );
-          })}
-        </Accordion>
+        <FAQAccordion FAQ_QUESTIONS={FAQ_QUESTIONS} />
       </section>
     </section>
   );

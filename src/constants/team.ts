@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
 
-type TeamMember = {
+export type TeamMember = {
   name: string;
   role: string;
   image: string | StaticImageData;
