@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/accordion";
+} from "../accordion/accordion";
 
 export const FAQSection = ({
   frequentlyAskedQuestions = true,

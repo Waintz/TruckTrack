@@ -1,5 +1,5 @@
 import { highlights } from "@/constants/highlights";
-import { CheckCircle } from "./CheckCircle";
+import { CheckCircle } from "../../elements/icons/CheckCircle";
 
 export default function HighlightsList() {
   return (

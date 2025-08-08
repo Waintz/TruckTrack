@@ -1,9 +1,9 @@
 'use client';
 
-import { RequestCallButton } from "../RequestCallButton";
-import { Logo } from "../Logo";
-import { NavMenu } from "../NavMenu";
-import { MobileMenuButton } from "../MobileMenuButton";
+import { RequestCallButton } from "../../elements/buttons/RequestCallButton";
+import { Logo } from "../../elements/icons/Logo";
+import { NavMenu } from "../../ui/navigation/NavMenu";
+import { MobileMenuButton } from "../../elements/icons/MobileMenuButton";
 
 export function Header() {
   return (

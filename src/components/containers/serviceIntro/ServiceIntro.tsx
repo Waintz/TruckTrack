@@ -1,9 +1,8 @@
 'use client';
 
 import clsx from "clsx";
-import truck from "@/assets/truck/DrivenByInsight.svg";
 import Image from "next/image";
-import { ApprovalCard } from "./ApprovalCard";
+import { ApprovalCard } from "../../ui/cards/ApprovalCard";
 import { SERVICE_TAGLINE } from "@/constants/texts";
 import { useRegisterSection } from "@/hooks/useRegisterSection";
 
@@ -41,7 +40,7 @@ export function ServiceIntro({ className }: { className?: string }) {
         </div>
       </section>
       <section className="hidden lg:block">
-        <Image className="w-120" src={truck} alt="test" />
+        <Image width={480} height={480} src="/truck/DrivenByInsight.svg" alt="test" />
       </section>
     </section>
   );

@@ -1,8 +1,8 @@
 "use client";
 
 import { useRegisterSection } from "@/hooks/useRegisterSection";
-import { Logo } from "../Logo";
-import { SocialIcons } from "../SocialIcons";
+import { Logo } from "../../elements/icons/Logo";
+import { SocialIcons } from "../../elements/icons/SocialIcons";
 
 export function Footer() {
   const setRef = useRegisterSection("contacts");

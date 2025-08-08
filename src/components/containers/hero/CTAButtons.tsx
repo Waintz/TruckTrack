@@ -1,5 +1,5 @@
-import { ConnectButton } from "./ConnectButton";
-import { RequestCallButton } from "./RequestCallButton";
+import { ConnectButton } from "../../elements/buttons/ConnectButton";
+import { RequestCallButton } from "../../elements/buttons/RequestCallButton";
 
 export function CTAButtons() {
   return (

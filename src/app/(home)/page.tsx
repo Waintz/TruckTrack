@@ -1,14 +1,18 @@
 export const dynamic = "force-static";
 
-import { FAQSection } from "@/components/FAQSection";
-import { HeroSection } from "@/components/HeroSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { PartnersSection } from "@/components/partnersSection/PartnersSection";
-import { ServiceIntro } from "@/components/ServiceIntro";
-import { TeamSection } from "@/components/TeamSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { FAQSection } from "@/components/containers/faq/FAQSection";
+import { HeroSection } from "@/components/containers/hero/HeroSection";
+import { HowItWorksSection } from "@/components/containers/howItWork/HowItWorksSection";
+import { PartnersSection } from "@/components/containers/partners/PartnersSection";
+import { ServiceIntro } from "@/components/containers/serviceIntro/ServiceIntro";
+import { TeamSection } from "@/components/containers/team/TeamSection";
+import { TestimonialsSection } from "@/components/containers/testimonials/TestimonialsSection";
+import { Metadata } from "next";
 
-// SocialIcons вынести Social в константу
+export const metadata: Metadata = {
+  title: "Truck Track",
+  description: "Track your truck's journey",
+};
 
 export default function Home() {
   return (
