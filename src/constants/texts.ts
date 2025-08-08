@@ -1,7 +1,4 @@
 // HERO SECTION -------------------------------------------------- //
-import telegram from '@/assets/social/telegram.svg'
-import github from '@/assets/social/github.svg'
-import instagram from '@/assets/social/instagram.svg'
 import { StaticImageData } from "next/image";
 
 export const HERO_TITLE =
@@ -132,19 +129,50 @@ export const SOCIAL_ICONS: ISocialIcons[] = [
   {
     id: 1,
     name: 'telegram',
-    img: telegram,
+    img: '/social/telegram.svg',
     url: 'https://t.me/Tackerl'
   },
   {
     id: 2,
     name: 'github',
-    img: github,
+    img: '/social/github.svg',
     url: 'https://github.com/Waintz'
   },
   {
     id: 3,
     name: 'instagram',
-    img: instagram,
+    img: '/social/instagram.svg',
     url: 'https://www.instagram.com/vlad_zgonnyk/'
   }
 ]
+
+// HowItWorksSection
+
+export interface IHotItWorkSteps {
+  number: string;
+  title: string;
+  desc: string;
+}
+
+export const HOT_IT_WORK_STEPS: IHotItWorkSteps[] = [
+    {
+      number: "01",
+      title: "Оставляете заявку",
+      desc: "Заполните короткую форму — это займёт не больше минуты.",
+    },
+    {
+      number: "02",
+      title: "Мы проверяем данные",
+      desc: "Менеджер свяжется с вами для уточнения деталей.",
+    },
+    {
+      number: "03",
+      title: "Создаём личный кабинет",
+      desc: "Вы получите доступ к системе и сможете начать работу.",
+    },
+    {
+      number: "04",
+      title: "Контроль фур в реальном времени",
+      desc: "Вся логистика и статусы заказов — у вас под рукой.",
+    },
+  ];

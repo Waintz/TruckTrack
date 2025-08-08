@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { PaginationControls } from "../PaginationControls";
+import { PaginationControls } from "../../elements/buttons/PaginationControls";
 import { PARTNERS } from "@/constants/partners";
 import usePartnersController from "@/hooks/usePartnersController";
 
@@ -39,11 +39,15 @@ export function PartnersSection({ className }: { className?: string }) {
             >
               {group.map((p) => (
                 <li key={p.id} className="w-40 h-10">
-                  <Image
-                    alt={p.name}
-                    src={p.img}
-                    className="w-full h-full object-contain"
-                  />
+                  <a target="_blank" rel="noopener noreferrer" href={p.link}>
+                    <Image
+                      width={p.width}
+                      height={p.height}
+                      alt={p.name}
+                      src={p.img}
+                      className="w-full h-full object-contain"
+                    />
+                  </a>
                 </li>
               ))}
             </ul>
@@ -55,11 +59,15 @@ export function PartnersSection({ className }: { className?: string }) {
       <ul className="hidden lg:grid grid-cols-1 lg:grid-cols-4 gap-y-7 gap-x-10 mt-14 mx-auto w-max">
         {PARTNERS.map((p) => (
           <li key={p.id} className="w-40 h-10">
-            <Image
-              alt={p.name}
-              src={p.img}
-              className="w-full h-full object-contain"
-            />
+            <a target="_blank" rel="noopener noreferrer" href={p.link}>
+              <Image
+                width={p.width}
+                height={p.height}
+                alt={p.name}
+                src={p.img}
+                className="w-full h-full object-contain"
+              />
+            </a>
           </li>
         ))}
       </ul>

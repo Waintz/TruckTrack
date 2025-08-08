@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "@/components/header/header";
-import { Footer } from "@/components/footer/footer";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
-import { ScrollProvider } from "@/providers/ScrollContext";
+import ClientLayout from "./client-layout";
 
 export const metadata: Metadata = {
   title: "Truck Track",
@@ -15,15 +11,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={`font-sans antialiased`}>
-        <ScrollProvider>
-          <Header />
-          {children}
-          <Footer />
-          <SpeedInsights />
-          <Analytics />
-        </ScrollProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
