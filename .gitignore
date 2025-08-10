@@ -1,41 +1,48 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# Node modules во всех пакетах и приложениях
 /node_modules
+/apps/*/node_modules
+/packages/*/node_modules
+
+# Yarn PnP (если используешь)
 /.pnp
 .pnp.*
-.yarn/*
+
+# Yarn Plug’n’Play кеш и директории (если используешь yarn)
+/.yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# Coverage reports
 /coverage
 
-# next.js
-/.next/
-/out/
+# Next.js build output
+/apps/*/.next/
+/apps/*/out/
 
-# production
+# Production builds (если есть)
 /build
 
-# misc
+# Системные файлы и макос-специфичные
 .DS_Store
+
+# SSL и ключи (если есть)
 *.pem
 
-# debug
+# Логи npm и yarn
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# Переменные окружения
 .env*
+!.env.example
 
-# vercel
+# Vercel
 .vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
