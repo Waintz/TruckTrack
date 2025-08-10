@@ -4,6 +4,7 @@ import { RequestCallButton } from "../../elements/buttons/RequestCallButton";
 import { Logo } from "../../elements/icons/Logo";
 import { NavMenu } from "../../ui/navigation/NavMenu";
 import { MobileMenuButton } from "../../elements/icons/MobileMenuButton";
+import { MobileMenuModal } from "@/components/ui/navigation/MobileMenuModal";
 
 export function Header() {
   return (
@@ -13,7 +14,7 @@ export function Header() {
       </section>
       <NavMenu />
       <section>
-        <MobileMenuButton />
+        <MobileMenuButton ModalWindow={MobileMenuModal} />
         <RequestCallButton className="hidden lg:block h-10" />
       </section>
     </header>
