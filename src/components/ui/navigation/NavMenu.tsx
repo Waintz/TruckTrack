@@ -1,6 +1,6 @@
 "use client";
 
-import { HEADER_NAV_MENU } from "@/constants/texts";
+import { HEADER_NAVIGATION_MENU } from "@/constants/texts";
 import { useScroll } from "@/providers/ScrollContext";
 
 export function NavMenu() {
@@ -12,7 +12,7 @@ export function NavMenu() {
       aria-label="Основное меню"
     >
       <ul className="flex gap-5 items-center">
-        {HEADER_NAV_MENU.map((e) => {
+        {HEADER_NAVIGATION_MENU.map((e) => {
           return (
             <li
               key={e.nameSection}

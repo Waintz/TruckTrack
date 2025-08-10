@@ -20,7 +20,7 @@ export const SERVICE_TAGLINE =
 export type FaqQuestions = {
   question: string;
   answer: string;
-}
+};
 
 export const FAQ_TITLE = "Часто задаваемые вопросы";
 
@@ -57,7 +57,6 @@ export const FAQ_QUESTIONS: FaqQuestions[] = [
   },
 ];
 
-
 // TESTIMONIALS
 
 export interface ITestimonial {
@@ -89,32 +88,38 @@ export const TESTIMONIALS: ITestimonial[] = [
   },
 ];
 
-// HEADER NAV MENU
+// NAV -------
 
-export type HeaderNav = {
+export interface INavigationItem {
   name: string;
   nameSection: string;
-};
+}
 
-export const HEADER_NAV_MENU: HeaderNav[] = [
-  {
-    name: 'О сервисе',
-    nameSection: 'about'
-  },
-  {
-    name: 'Команда',
-    nameSection: 'team'
-  },
-  {
-    name: 'Отзывы',
-    nameSection: 'testimonials'
-  },
-  {
-    name: 'Контакты',
-    nameSection: 'contacts'
-  },
-  
-]
+// HEADER NAV MENU
+export const HEADER_NAVIGATION_MENU: INavigationItem[] = [
+  { name: "О сервисе", nameSection: "about" },
+  { name: "Команда", nameSection: "team" },
+  { name: "Отзывы", nameSection: "testimonials" },
+  { name: "Контакты", nameSection: "contacts" },
+];
+
+// Основная навигация мобильного меню
+export const MOBILE_MENU_NAVIGATION: INavigationItem[] = [
+  { name: "О сервисе", nameSection: "about" },
+  { name: "Команда", nameSection: "team" },
+  { name: "Отзывы", nameSection: "testimonials" },
+  { name: "Контакты", nameSection: "contacts" },
+];
+
+// Информационный блок мобильного меню
+export const MOBILE_MENU_INFORMATION: INavigationItem[] = [
+  { name: "Поддержка / Помощь", nameSection: "support" },
+  { name: "О сервисе", nameSection: "about" },
+  { name: "Тарифы", nameSection: "pricing" },
+  { name: "Условия использования", nameSection: "terms" },
+];
+
+// -------
 
 // SOCIAL ICONS
 
@@ -123,28 +128,28 @@ export interface ISocialIcons {
   name: string;
   img: string | StaticImageData;
   url: string;
-} 
+}
 
 export const SOCIAL_ICONS: ISocialIcons[] = [
   {
     id: 1,
-    name: 'telegram',
-    img: '/social/telegram.svg',
-    url: 'https://t.me/Tackerl'
+    name: "telegram",
+    img: "/social/telegram.svg",
+    url: "https://t.me/Tackerl",
   },
   {
     id: 2,
-    name: 'github',
-    img: '/social/github.svg',
-    url: 'https://github.com/Waintz'
+    name: "github",
+    img: "/social/github.svg",
+    url: "https://github.com/Waintz",
   },
   {
     id: 3,
-    name: 'instagram',
-    img: '/social/instagram.svg',
-    url: 'https://www.instagram.com/vlad_zgonnyk/'
-  }
-]
+    name: "instagram",
+    img: "/social/instagram.svg",
+    url: "https://www.instagram.com/vlad_zgonnyk/",
+  },
+];
 
 // HowItWorksSection
 
@@ -155,24 +160,24 @@ export interface IHotItWorkSteps {
 }
 
 export const HOT_IT_WORK_STEPS: IHotItWorkSteps[] = [
-    {
-      number: "01",
-      title: "Оставляете заявку",
-      desc: "Заполните короткую форму — это займёт не больше минуты.",
-    },
-    {
-      number: "02",
-      title: "Мы проверяем данные",
-      desc: "Менеджер свяжется с вами для уточнения деталей.",
-    },
-    {
-      number: "03",
-      title: "Создаём личный кабинет",
-      desc: "Вы получите доступ к системе и сможете начать работу.",
-    },
-    {
-      number: "04",
-      title: "Контроль фур в реальном времени",
-      desc: "Вся логистика и статусы заказов — у вас под рукой.",
-    },
-  ];
+  {
+    number: "01",
+    title: "Оставляете заявку",
+    desc: "Заполните короткую форму — это займёт не больше минуты.",
+  },
+  {
+    number: "02",
+    title: "Мы проверяем данные",
+    desc: "Менеджер свяжется с вами для уточнения деталей.",
+  },
+  {
+    number: "03",
+    title: "Создаём личный кабинет",
+    desc: "Вы получите доступ к системе и сможете начать работу.",
+  },
+  {
+    number: "04",
+    title: "Контроль фур в реальном времени",
+    desc: "Вся логистика и статусы заказов — у вас под рукой.",
+  },
+];
