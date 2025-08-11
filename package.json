@@ -12,6 +12,7 @@
     "turbo": "^1.13.4"
   },
   "scripts": {
+    "postinstall": "npm rebuild lightningcss --update-binary",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
