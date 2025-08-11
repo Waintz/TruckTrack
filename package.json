@@ -6,6 +6,9 @@
     "packages/*"
   ],
   "devDependencies": {
+    "next": "^15.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "turbo": "^1.13.4"
   },
   "scripts": {
@@ -13,5 +16,8 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "test": "turbo run test"
+  },
+  "dependencies": {
+    "tailwind": "^4.0.0"
   }
 }

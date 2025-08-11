@@ -1,0 +1,22 @@
+2025-08-11T19:43:57.953768Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo\\cookies\\1.cookie"), AnchoredSystemPathBuf(".turbo"), AnchoredSystemPathBuf(".turbo\\cookies")}
+2025-08-11T19:43:57.953853Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-08-11T19:44:13.742005Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\marketing\\.next"), AnchoredSystemPathBuf("apps\\marketing")}
+2025-08-11T19:44:13.742033Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("truck-track"), path: AnchoredSystemPathBuf("apps\\marketing") }}))
+2025-08-11T19:44:13.980702Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\marketing\\.next")}
+2025-08-11T19:44:13.980722Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("truck-track"), path: AnchoredSystemPathBuf("apps\\marketing") }}))
+2025-08-11T19:44:13.980787Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-08-11T19:44:19.351698Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\marketing\\.next")}
+2025-08-11T19:44:19.351731Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("truck-track"), path: AnchoredSystemPathBuf("apps\\marketing") }}))
+2025-08-11T19:44:19.452662Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-08-11T19:44:24.639152Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\marketing\\.next")}
+2025-08-11T19:44:24.639177Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("truck-track"), path: AnchoredSystemPathBuf("apps\\marketing") }}))
+2025-08-11T19:44:24.822273Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-08-11T19:44:24.822700Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\marketing\\.next")}
+2025-08-11T19:44:24.822717Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("truck-track"), path: AnchoredSystemPathBuf("apps\\marketing") }}))
+2025-08-11T19:44:24.822787Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-08-11T19:44:26.840625Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\marketing\\.next")}
+2025-08-11T19:44:26.840679Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("truck-track"), path: AnchoredSystemPathBuf("apps\\marketing") }}))
+2025-08-11T19:44:27.452886Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-08-11T19:44:27.453666Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\marketing\\.next")}
+2025-08-11T19:44:27.453682Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("truck-track"), path: AnchoredSystemPathBuf("apps\\marketing") }}))
+2025-08-11T19:44:27.453767Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
