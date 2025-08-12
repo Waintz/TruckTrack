@@ -1,24 +1,27 @@
 {
   "name": "trucktrack-monorepo",
   "private": true,
+  "packageManager": "npm@10.9.2",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "devDependencies": {
-    "next": "^15.4.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "turbo": "^1.13.4"
+    "define-properties": "^1.2.1",
+    "eslint-plugin-react": "^7.37.5",
+    "json-schema-traverse": "^1.0.0",
+    "turbo": "^1.13.4",
+    "uri-js": "^4.4.1"
   },
   "scripts": {
     "postinstall": "npm rebuild lightningcss --update-binary",
     "build": "turbo run build",
+    "build:marketing": "turbo run build --filter=truck-track",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "test": "turbo run test"
   },
-  "dependencies": {
-    "tailwindcss": "^4.1.11"
+  "engines": {
+    "node": ">=18"
   }
 }

@@ -83,3 +83,5 @@ next-env.d.ts
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+.turbo
