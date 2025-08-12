@@ -20,8 +20,5 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "test": "turbo run test"
-  },
-  "engines": {
-    "node": ">=18"
   }
 }
