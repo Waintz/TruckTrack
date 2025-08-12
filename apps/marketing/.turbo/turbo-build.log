@@ -1,0 +1,35 @@
+
+> truck-track@0.1.0 build
+> next build
+
+   ▲ Next.js 15.4.6
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 11.0s
+   Linting and checking validity of types ...
+
+./src/components/containers/serviceIntro/ServiceIntro.tsx
+5:10  Warning: 'ApprovalCard' is defined but never used.  @typescript-eslint/no-unused-vars
+6:10  Warning: 'SERVICE_TAGLINE' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    18.8 kB         124 kB
+└ ○ /_not-found                            984 B         101 kB
++ First Load JS shared by all             100 kB
+  ├ chunks/87c73c54-1f4741035a95c140.js  54.1 kB
+  ├ chunks/902-a1b735a0b0a65f38.js       43.9 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+○  (Static)  prerendered as static content
+
