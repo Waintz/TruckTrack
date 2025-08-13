@@ -1,27 +1,21 @@
-export type PageConfig = {
-  title: string
-  path: string
-  icon?: string
-  layout?: 'default' | 'dashboard' | 'auth'
-  showHeader?: boolean
-  showFooter?: boolean
-}
+// возможно использовать в будушем, пока просто не используй.
 
-export const pagesConfig: PageConfig[] = [
-  {
-    title: 'Home',
-    path: '/',
-    icon: 'home',
-    layout: 'default',
-    showHeader: true,
-    showFooter: true,
+export const PAGES_CONFIG = {
+  HOME: {
+    path: "/",
   },
-  {
-    title: 'Dashboard',
-    path: '/dashboard',
-    icon: 'dashboard',
-    layout: 'dashboard',
-    showHeader: false,
-    showFooter: false,
+  POLICY: {
+    path: "/documents/policy",
   },
-]
+  TERMS: {
+    path: "/documents/terms",
+  },
+} as const;
+
+export type PageKey = keyof typeof PAGES_CONFIG;
+
+export type PageConfig = {
+  [K in PageKey]: {
+    path: string;
+  };
+};
