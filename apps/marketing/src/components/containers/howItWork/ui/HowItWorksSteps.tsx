@@ -1,7 +1,7 @@
-import { IHotItWorkSteps } from "@/constants/texts";
+import { IHowItWorkSteps } from "@/constants/texts";
 
 interface IProps {
-  HOW_IT_WORK_STEPS: IHotItWorkSteps[];
+  HOW_IT_WORK_STEPS: IHowItWorkSteps[];
 }
 
 export function HowItWorksSteps({ HOW_IT_WORK_STEPS }: IProps) {

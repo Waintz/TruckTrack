@@ -15,16 +15,16 @@ export const TEAM: TeamMember[] = [
   {
     name: "Мария П.",
     role: "UI/UX Designer",
-    image: "/teams/maria.png",
+    image: "/teams/Inkognito.svg",
   },
   {
     name: "Игорь К.",
     role: "Backend Developer",
-    image: "/teams/igor.png",
+    image: "/teams/Inkognito.svg",
   },
   {
     name: "Алина С.",
     role: "Project Manager",
-    image: "/teams/alina.png",
+    image: "/teams/Inkognito.svg",
   },
 ];

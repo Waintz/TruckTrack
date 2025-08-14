@@ -2,9 +2,20 @@
 
 import { HEADER_NAVIGATION_MENU } from "@/constants/texts";
 import { useScroll } from "@/providers/ScrollContext";
+import { usePathname, useRouter } from "next/navigation";
 
 export function NavMenu() {
   const { scrollToSection } = useScroll();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleClick = (section: string) => {
+    if (pathname === "/") {
+      scrollToSection(section);
+    } else {
+      router.push(`/#${section}`);
+    }
+  };
 
   return (
     <nav
@@ -16,7 +27,7 @@ export function NavMenu() {
           return (
             <li
               key={e.nameSection}
-              onClick={() => scrollToSection(e.nameSection)}
+              onClick={() => handleClick(e.nameSection)}
               className="cursor-pointer"
             >
               {e.name}

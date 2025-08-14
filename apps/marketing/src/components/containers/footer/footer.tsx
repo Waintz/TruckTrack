@@ -5,12 +5,17 @@ import { Logo } from "../../elements/icons/Logo";
 import { SocialIcons } from "../../elements/icons/SocialIcons";
 import Link from "next/link";
 import { PAGES_CONFIG } from "@/config/pages.config";
+import { NAVIGATION_SECTION_CONFIG } from "@/constants/texts";
+
+const nameSection = NAVIGATION_SECTION_CONFIG.contacts.nameSection
 
 export function Footer() {
-  const setRef = useRegisterSection("contacts");
+  const setRef = useRegisterSection(nameSection);
 
   return (
     <footer
+      id={nameSection}
+      tabIndex={-1}
       ref={setRef}
       className="container mx-auto p-4 mt-15 scroll-mt-header"
     >
