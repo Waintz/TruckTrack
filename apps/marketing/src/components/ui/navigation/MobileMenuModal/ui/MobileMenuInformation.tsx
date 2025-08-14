@@ -1,11 +1,11 @@
-import { INavigationItem } from "@/constants/texts";
+import { INavigationSectionItem } from "@/constants/texts";
 
 export function MobileMenuInformation({
   InformationMenu,
   onClose,
   scrollToSection,
 }: {
-  InformationMenu: INavigationItem[];
+  InformationMenu: INavigationSectionItem[];
   onClose?: () => void;
   scrollToSection?: (section: string) => void;
 }) {

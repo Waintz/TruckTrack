@@ -9,7 +9,6 @@ export function NavMenu() {
   const pathname = usePathname();
   const router = useRouter();
 
-  0;
   const handleClick = (section: string) => {
     if (pathname === "/") {
       scrollToSection(section);
