@@ -1,7 +1,7 @@
 import {
+  HERO_TIME_SAVING_TEXT_BEFORE,
   HERO_TIME_SAVING_HIGHLIGHT,
   HERO_TIME_SAVING_TEXT_AFTER,
-  HERO_TIME_SAVING_TEXT_BEFORE,
 } from "@/constants/texts";
 
 export function TimeSaving() {
