@@ -1,6 +1,12 @@
 "use client";
 
-import React, { createContext, useCallback, useContext, useRef } from "react";
+import { useRouter } from "next/navigation";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useRef,
+} from "react";
 
 type ScrollContextType = {
   registerSection: (name: string, el: HTMLElement | null) => void;
@@ -10,6 +16,7 @@ type ScrollContextType = {
 const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
 
 export function ScrollProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const section = useRef<Map<string, HTMLElement | null>>(new Map());
 
   const registerSection = useCallback(
@@ -19,10 +26,17 @@ export function ScrollProvider({ children }: { children: React.ReactNode }) {
     []
   );
 
-  const scrollToSection = useCallback((name: string) => {
-    const el = section.current.get(name);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  }, []);
+  const scrollToSection = useCallback(
+    (name: string) => {
+      const el = section.current.get(name);
+      if (el && 'scrollIntoView' in el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push(`/#${name}`);
+      }
+    },
+    [router]
+  );
 
   return (
     <ScrollContext.Provider value={{ registerSection, scrollToSection }}>
