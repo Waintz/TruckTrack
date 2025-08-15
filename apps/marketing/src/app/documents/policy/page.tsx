@@ -5,7 +5,7 @@ import PrivacyPolicy from "@/components/containers/privacyPolicy/PrivacyPolicy";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Truck Track",
+  title: "Policy",
   description: "Privacy Policy",
 };
 

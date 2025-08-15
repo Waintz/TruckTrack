@@ -6,7 +6,7 @@ import { NavMenu } from "../../ui/navigation/NavMenu";
 import { MobileMenuButton } from "../../elements/icons/MobileMenuButton";
 import { MobileMenuModal } from "@/components/ui/navigation/MobileMenuModal";
 
-export function Header() {
+export function HeaderMain() {
   return (
     <header className="flex items-center justify-between container mx-auto p-5 bg-white shadow-2xs sticky top-0 left-0 z-100">
       <section className="flex items-center gap-1">

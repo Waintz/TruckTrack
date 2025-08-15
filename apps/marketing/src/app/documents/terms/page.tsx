@@ -5,7 +5,7 @@ import { UserAgreement } from "@/components/containers/userAgreement/UserAgreeme
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Truck Track",
+  title: "User Agreement",
   description: "User Agreement",
 };
 
