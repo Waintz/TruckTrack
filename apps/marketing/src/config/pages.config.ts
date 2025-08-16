@@ -1,5 +1,6 @@
 // возможно использовать в будушем, пока просто не используй.
 
+
 export const PAGES_CONFIG = {
   HOME: {
     path: "/",
@@ -10,6 +11,9 @@ export const PAGES_CONFIG = {
   TERMS: {
     path: "/documents/terms",
   },
+  DASHBOARD: {
+    path: "/dashboard",
+  }
 } as const;
 
 export type PageKey = keyof typeof PAGES_CONFIG;

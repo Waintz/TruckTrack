@@ -1,12 +1,15 @@
 "use client";
 
+import clsx from "clsx";
 import { useState } from "react";
 
 type MobileMenuButtonProps = {
-  ModalWindow: React.ComponentType<{ onClose: () => void }>;
+  ModalWindow?: React.ComponentType<{ onClose: () => void }>;
+  gap?: string;
+  color?: string;
 };
 
-export function MobileMenuButton({ ModalWindow }: MobileMenuButtonProps) {
+export function MobileMenuButton({ ModalWindow, color = 'black', gap }: MobileMenuButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -14,24 +17,26 @@ export function MobileMenuButton({ ModalWindow }: MobileMenuButtonProps) {
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
-        className="relative w-8 h-8 flex flex-col justify-center items-center gap-[6px] lg:hidden z-50"
+        className={clsx(`relative w-8 h-8 flex flex-col justify-center items-center gap-${gap} lg:hidden z-50`)}
         type="button"
       >
         <span
-          className={`block w-6 h-[2.5px] bg-black rounded transition-transform duration-300 ease-in-out origin-center
+          className={`block w-6 h-[2.5px] bg-[${color}] rounded transition-transform duration-300 ease-in-out origin-center
           ${isOpen ? "rotate-45 translate-y-[6px]" : ""}`}
         />
         <span
-          className={`block w-6 h-[2.5px] bg-black rounded transition-opacity duration-300 ease-in-out
+          className={`block w-6 h-[2.5px] bg-[${color}] rounded transition-opacity duration-300 ease-in-out
           ${isOpen ? "opacity-0" : "opacity-100"}`}
         />
         <span
-          className={`block w-6 h-[2.5px] bg-black rounded transition-transform duration-300 ease-in-out origin-center
+          className={`block w-6 h-[2.5px] bg-[${color}] rounded transition-transform duration-300 ease-in-out origin-center
           ${isOpen ? "-rotate-45 -translate-y-[6px]" : ""}`}
         />
       </button>
 
-      {isOpen && <ModalWindow onClose={() => setIsOpen(false)} />}
+      {isOpen && ModalWindow && (
+        <ModalWindow onClose={() => setIsOpen(false)} />
+      )}
     </>
   );
 }

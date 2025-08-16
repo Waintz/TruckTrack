@@ -1,15 +1,15 @@
 import { Footer } from "@/components/containers/footer/footer";
-import { Header } from "@/components/containers/header/header";
+import { HeaderMain } from "@/components/containers/HeaderMain/HeaderMain";
 import { ScrollProvider } from "@/providers/ScrollContext";
 
-export default function DashboardLayout({
+export default function PolicyLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <ScrollProvider>
-      <Header />
+      <HeaderMain />
       {children}
       <Footer />
     </ScrollProvider>

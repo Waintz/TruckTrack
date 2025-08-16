@@ -7,12 +7,6 @@ import { PartnersSection } from "@/components/containers/partners/PartnersSectio
 import { ServiceIntro } from "@/components/containers/serviceIntro/ServiceIntro";
 import { TeamSection } from "@/components/containers/team/TeamSection";
 import { TestimonialsSection } from "@/components/containers/testimonials/TestimonialsSection";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Truck Track",
-  description: "Track your truck's journey",
-};
 
 export default function Home() {
   return (
