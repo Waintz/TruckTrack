@@ -1,7 +1,7 @@
 export const dynamic = "force-static";
 
 
-import PrivacyPolicy from "@/components/containers/privacyPolicy/PrivacyPolicy";
+import PrivacyPolicy from "@/components/containers/PrivacyPolicy/PrivacyPolicy";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

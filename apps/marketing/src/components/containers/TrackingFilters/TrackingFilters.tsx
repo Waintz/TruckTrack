@@ -4,13 +4,17 @@ import { useFormattedDate } from "@/hooks/useFormattedDate";
 import { Search } from "lucide-react";
 
 export function TrackingFilters() {
-  const { formattedDate } = useFormattedDate('en-GB', {
-    weekday: "short",
-    day: "2-digit",
-    month: "short",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
+  const { formattedDate } = useFormattedDate({
+    locale: "en-GB",
+    formattedOptions: {
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    },
+    order: ["weekday", "day", "month", "hour", "literal", "minute", "literal", "second"],
   });
 
   return (

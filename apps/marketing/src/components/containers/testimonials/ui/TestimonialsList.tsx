@@ -14,7 +14,7 @@ export function TestimonialsList({ TESTIMONIALS }: Props) {
         >
           <p className="text-gray-700 mb-6 flex-grow leading-relaxed">{text}</p>
           <footer className="mt-auto">
-            <p className="font-semibold text-[#4A6CF7]">{name}</p>
+            <p className="font-semibold text-blue">{name}</p>
             <p className="text-gray-500 text-sm">{company}</p>
           </footer>
         </article>

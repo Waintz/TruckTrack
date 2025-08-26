@@ -9,7 +9,7 @@ export function HowItWorksSteps({ HOW_IT_WORK_STEPS }: IProps) {
     <ol className="grid gap-10 md:grid-cols-2">
       {HOW_IT_WORK_STEPS.map((step) => (
         <li key={step.number} className="flex items-start gap-6">
-          <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#4A6CF7] text-white text-lg font-bold flex items-center justify-center shadow-md">
+          <div className="flex-shrink-0 w-14 h-14 rounded-full bg-blue text-white text-lg font-bold flex items-center justify-center shadow-md">
             {step.number}
           </div>
           <div>

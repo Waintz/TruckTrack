@@ -1,4 +1,4 @@
-import { Footer } from "@/components/containers/footer/footer";
+import { Footer } from "@/components/containers/Footer/footer";
 import { HeaderMain } from "@/components/containers/HeaderMain/HeaderMain";
 import { ScrollProvider } from "@/providers/ScrollContext";
 

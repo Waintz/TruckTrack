@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-export function PaginationControls({
+export function ArrowPaginationControls({
   className,
   onClickLeft,
   onClickRight,

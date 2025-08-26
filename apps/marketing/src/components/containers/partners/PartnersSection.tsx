@@ -1,6 +1,6 @@
 "use client";
 
-import { PaginationControls } from "../../elements/buttons/PaginationControls";
+import { ArrowPaginationControls } from "../../elements/buttons/pagination/ArrowPaginationControls";
 import { PARTNERS } from "@/constants/partners";
 import usePartnersController from "@/hooks/usePartnersController";
 import { PartnersMobileSection } from "./ui/PartnersMobileSection";
@@ -31,7 +31,7 @@ export function PartnersSection({ className }: { className?: string }) {
         partnersChunks={partnerChunks}
       />
 
-      <PaginationControls
+      <ArrowPaginationControls
         onClickLeft={handleLeft}
         onClickRight={handleRight}
         disableLeftArrow={stateLeftArrow}

@@ -6,7 +6,7 @@ export default function HighlightsList() {
     <ul className="max-w-3xl space-y-3">
       {highlights.map((item, idx) => (
         <li key={idx} className="flex items-start gap-4">
-          <CheckCircle className="flex-shrink-0 mt-1 text-[#4A6CF7]" />
+          <CheckCircle className="flex-shrink-0 mt-1 text-blue" />
           <p className="text-gray-800 font-semibold text-base sm:text-sm lg:text-lg leading-snug">
             {item}
           </p>

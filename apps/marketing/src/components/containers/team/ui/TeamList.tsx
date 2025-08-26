@@ -10,7 +10,7 @@ export function TeamList({ team }: Props) {
     <ul className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
       {team.map((member, index) => (
         <li key={index} className="text-center">
-          <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-[#4A6CF7] mb-4">
+          <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-blue mb-4">
             <Image
               src={member.image}
               alt={member.name}
