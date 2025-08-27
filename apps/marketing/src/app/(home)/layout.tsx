@@ -1,8 +1,12 @@
-import { Footer } from "@/components/containers/Footer/footer";
+import { Footer } from "@/components/containers/Footer/Footer";
 import { HeaderMain } from "@/components/containers/HeaderMain/HeaderMain";
 import { ScrollProvider } from "@/providers/ScrollContext";
 
-export default function HomeLayout({ children }: { children: React.ReactNode }) {
+export default function HomeLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <ScrollProvider>
       <HeaderMain />
