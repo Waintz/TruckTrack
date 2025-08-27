@@ -122,6 +122,19 @@
   }
 }
 
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 @font-face {
   font-family: "DMSansRegular";
   src: url(/fonts/DMSans-Regular.woff2) format("woff2");

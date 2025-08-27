@@ -9,7 +9,11 @@ type MobileMenuButtonProps = {
   color?: string;
 };
 
-export function MobileMenuButton({ ModalWindow, color = 'black', gap }: MobileMenuButtonProps) {
+export function MobileMenuButton({
+  ModalWindow,
+  color = "black",
+  gap = '1',
+}: MobileMenuButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,19 +21,24 @@ export function MobileMenuButton({ ModalWindow, color = 'black', gap }: MobileMe
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
-        className={clsx(`relative w-8 h-8 flex flex-col justify-center items-center gap-${gap} lg:hidden z-50`)}
+        className={clsx(
+          `relative w-8 h-8 flex flex-col justify-center items-center gap-${gap} lg:hidden z-50`
+        )}
         type="button"
       >
         <span
-          className={`block w-6 h-[2.5px] bg-[${color}] rounded transition-transform duration-300 ease-in-out origin-center
+          style={{ backgroundColor: color }}
+          className={`block w-6 h-[2.5px] rounded transition-transform duration-300 ease-in-out origin-center
           ${isOpen ? "rotate-45 translate-y-[6px]" : ""}`}
         />
         <span
-          className={`block w-6 h-[2.5px] bg-[${color}] rounded transition-opacity duration-300 ease-in-out
+          style={{ backgroundColor: color }}
+          className={`block w-6 h-[2.5px] rounded transition-opacity duration-300 ease-in-out
           ${isOpen ? "opacity-0" : "opacity-100"}`}
         />
         <span
-          className={`block w-6 h-[2.5px] bg-[${color}] rounded transition-transform duration-300 ease-in-out origin-center
+          style={{ backgroundColor: color }}
+          className={`block w-6 h-[2.5px] rounded transition-transform duration-300 ease-in-out origin-center
           ${isOpen ? "-rotate-45 -translate-y-[6px]" : ""}`}
         />
       </button>

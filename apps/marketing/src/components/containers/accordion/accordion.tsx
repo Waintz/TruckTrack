@@ -40,9 +40,9 @@ function AccordionTrigger({
         {...props}
       >
         {children}
-        <div className="bg-[#4A6CF7] border-1 border-[#4A6CF7] group-data-[state=open]:bg-white w-5 h-5 rounded-[50%] relative pointer-events-none translate-y-0.5 transition-transform duration-200">
-          <div className="absolute top-[4px] left-[8px] w-[2px] h-[10px] bg-white group-data-[state=open]:bg-[#4A6CF7]"></div>
-          <div className="absolute top-[4px] left-[8px] w-[2px] h-[10px] bg-white rotate-90 group-data-[state=open]:bg-[#4A6CF7]"></div>
+        <div className="bg-blue border-1 border-blue group-data-[state=open]:bg-white w-5 h-5 rounded-[50%] relative pointer-events-none translate-y-0.5 transition-transform duration-200">
+          <div className="absolute top-[4px] left-[8px] w-[2px] h-[10px] bg-white group-data-[state=open]:bg-blue"></div>
+          <div className="absolute top-[4px] left-[8px] w-[2px] h-[10px] bg-white rotate-90 group-data-[state=open]:bg-blue"></div>
         </div>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>

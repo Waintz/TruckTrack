@@ -1,7 +1,7 @@
 export const dynamic = "force-static";
 
 
-import { UserAgreement } from "@/components/containers/userAgreement/UserAgreement";
+import { UserAgreement } from "@/components/containers/UserAgreement/UserAgreement";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
