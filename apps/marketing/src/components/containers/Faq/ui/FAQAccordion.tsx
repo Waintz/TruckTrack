@@ -11,7 +11,7 @@ interface Props {
 }
 export function FAQAccordion({ FAQ_QUESTIONS }: Props) {
   return (
-    <Accordion type="single" collapsible={true}>
+    <Accordion type="single" collapsible>
       {FAQ_QUESTIONS.map((item, index) => (
         <AccordionItem value={`item-${index}`} key={index}>
           <AccordionTrigger className="font-semibold text-[15px]">
