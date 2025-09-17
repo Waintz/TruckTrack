@@ -4,12 +4,12 @@ import { CardList } from "@/components/shared/CardList";
 
 interface Props {
   delayedDeliveryTrucks: ITruckDelivery[];
-  onCardClick: (row: ITruckDelivery) => void;
+  onRowClick?: (row: ITruckDelivery) => void;
 }
 
 export function DelayedDeliveryCards({
   delayedDeliveryTrucks,
-  onCardClick,
+  onRowClick,
 }: Props) {
   return (
     <CardList
@@ -18,7 +18,7 @@ export function DelayedDeliveryCards({
         <DelayedDeliveryCard
           key={row.id}
           truckInformation={row}
-          onCardClick={onCardClick}
+          onCardClick={onRowClick}
         />
       )}
     />

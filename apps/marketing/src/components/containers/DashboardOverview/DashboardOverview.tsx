@@ -8,7 +8,7 @@ import { DailyPlanContainer } from "../DailyPlan/DailyPlanContainer";
 import { AvailableTrucksContainer } from "../AvailableTrucks/AvailableTrucksContainer";
 import { RecentRequestsContainer } from "../RecentRequests/RecentRequestsContainer";
 
-export function ShippingDashboard({ className }: { className?: string }) {
+export function DashboardOverview({ className }: { className?: string }) {
   return (
     <div className={clsx("p-4", className)}>
       <header>

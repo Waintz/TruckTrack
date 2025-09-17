@@ -7,4 +7,8 @@ export const COLORS = {
   orange: "#F2AF4C", // предупреждения / акценты
   purple: "#7B57DF", // акцентоный фиолетовый цвет
   blue: "#4a6cf7", // акцентовый синий цвет
+  ghostWhite: "#f6f5fa",
 } as const;
+
+export type ColorsType = typeof COLORS;
+export type ColorsValue = ColorsType[keyof ColorsType];

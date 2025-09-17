@@ -19,7 +19,7 @@ export function AvailableTrucksTable({ truckLoad, limit }: Props) {
         return (
           <div
             key={row.id}
-            className="p-3 sm:p-3 text-sm md:text-md font-bold"
+            className="p-3 sm:p-4.5 text-sm md:text-md font-bold"
             style={
               index < effectiveLimit - 1
                 ? { borderBottom: "1px solid #e5e7eb" }

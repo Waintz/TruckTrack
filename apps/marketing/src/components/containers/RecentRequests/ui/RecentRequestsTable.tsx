@@ -24,7 +24,7 @@ export function RecentRequestsTable({ recentRequest, limit }: Props) {
             }
             className="p-3 font-bold"
           >
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">
                 <IconButton className="hidden sm:block" icon="/icons/box.svg" />
                 <div>
@@ -32,10 +32,13 @@ export function RecentRequestsTable({ recentRequest, limit }: Props) {
                     <p>{row.type}</p>
                   </div>
                   <div>
+                    <span className="sm:hidden opacity-50">{row.truck}</span>
                     <span className="hidden sm:inline opacity-40">
                       Destination{" "}
                     </span>
-                    <span className="opacity-50">{row.destination}</span>
+                    <span className="opacity-50 hidden sm:inline">
+                      {row.destination}
+                    </span>
                     <div className="opacity-40 sm:hidden text-sm mt-1 ">
                       {row.timeAgo} min ago
                     </div>

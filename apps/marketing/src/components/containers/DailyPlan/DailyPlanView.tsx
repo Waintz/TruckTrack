@@ -1,8 +1,9 @@
-import { Surface } from "@/components/ui/Surface/Surface";
+import { Surface } from "@/components/shared/Surface";
 import { DailyPlanHeader } from "./ui/DailyPlanHeader";
 import { DailyPlanStats } from "./ui/DailyPlanStats";
 import { IDailyMetric } from "@/types/truck";
 import { DailyPlanProgressBar } from "./ui/DailyPlanProgressBar";
+import clsx from "clsx";
 
 interface Props {
   className?: string;
@@ -12,9 +13,13 @@ interface Props {
 
 // Progess потом сделать лучше
 
-export function DailyPlanView({ className, DailyMetric, dailyProgress }: Props) {
+export function DailyPlanView({
+  className,
+  DailyMetric,
+  dailyProgress,
+}: Props) {
   return (
-    <Surface className={className}>
+    <Surface className={clsx(className, "p-5 md:px-10 md:py-6")}>
       <DailyPlanHeader />
 
       <section className="mt-5 flex items-center justify-between">
