@@ -5,26 +5,42 @@
    ▲ Next.js 15.4.6
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 4.0s
+ ✓ Compiled successfully in 6.0s
    Linting and checking validity of types ...
-Failed to compile.
 
-./src/components/containers/Faq/ui/FAQAccordion.tsx:15:6
-Type error: Type '{ children: Element[]; type: "single"; collapsible: true; }' is not assignable to type 'IntrinsicAttributes & ((AccordionSingleProps | AccordionMultipleProps) & RefAttributes<HTMLDivElement>)'.
-  Property 'children' does not exist on type 'IntrinsicAttributes & AccordionSingleProps & RefAttributes<HTMLDivElement>'.
+./src/components/containers/DashboardSidebar/ui/SidebarHeaderNavItem.tsx
+21:3  Warning: 'active' is assigned a value but never used.  @typescript-eslint/no-unused-vars
 
-[0m [90m 13 |[39m [36mexport[39m [36mfunction[39m [33mFAQAccordion[39m({ [33mFAQ_QUESTIONS[39m }[33m:[39m [33mProps[39m) {
- [90m 14 |[39m   [36mreturn[39m (
-[31m[1m>[22m[39m[90m 15 |[39m     [33m<[39m[33mAccordion[39m type[33m=[39m[32m"single"[39m collapsible[33m>[39m
- [90m    |[39m      [31m[1m^[22m[39m
- [90m 16 |[39m       {[33mFAQ_QUESTIONS[39m[33m.[39mmap((item[33m,[39m index) [33m=>[39m {
- [90m 17 |[39m         [36mreturn[39m (
- [90m 18 |[39m           [33m<[39m[33mAccordionItem[39m value[33m=[39m{[32m`item-${index}`[39m} key[33m=[39m{index}[33m>[39m[0m
-Next.js build worker exited with code: 1 and signal: null
-npm error Lifecycle script `build` failed with error:
-npm error code 1
-npm error path D:\OneDrive\Documents\TruckTrack\truck-track\apps\marketing
-npm error workspace truck-track@0.1.0
-npm error location D:\OneDrive\Documents\TruckTrack\truck-track\apps\marketing
-npm error command failed
-npm error command C:\WINDOWS\system32\cmd.exe /d /s /c next build
+./src/components/containers/DashboardSidebar/ui/SidebarUserProfile.tsx
+1:8  Warning: 'Image' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/containers/DelayedDelivery/ui/DelayedDeliveryDrawerModal/DelayedDeliveryDrawerModal.tsx
+14:3  Warning: 'truckId' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/11) ...
+   Generating static pages (2/11) 
+   Generating static pages (5/11) 
+   Generating static pages (8/11) 
+ ✓ Generating static pages (11/11)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    6.63 kB         128 kB
+├ ○ /_not-found                            984 B         101 kB
+├ ○ /dashboard                           7.47 kB         148 kB
+├ ○ /documents/policy                      131 B         100 kB
+├ ○ /documents/terms                      3.5 kB         104 kB
+├ ○ /shipments                             131 B         100 kB
+├ ○ /shipments/arrival                   3.22 kB         142 kB
+└ ○ /shipments/available                   179 B         139 kB
++ First Load JS shared by all             100 kB
+  ├ chunks/87c73c54-1f4741035a95c140.js  54.1 kB
+  ├ chunks/902-a1b735a0b0a65f38.js       43.9 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+○  (Static)  prerendered as static content
+
