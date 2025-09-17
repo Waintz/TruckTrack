@@ -10,6 +10,7 @@ export function FAQAccordion({ FAQ_QUESTIONS }: Props) {
     <Accordion type="single" collapsible>
       {FAQ_QUESTIONS.map((item, index) => {
         return (
+          
           <AccordionItem value={`item-${index}`} key={index}>
             <AccordionTrigger className="font-semibold text-[15px]">
               {item.question}
