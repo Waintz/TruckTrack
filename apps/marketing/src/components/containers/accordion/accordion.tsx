@@ -6,8 +6,8 @@ import { cn } from "@/components/lib/utils"
 
 // ---------- Root ----------
 type AccordionProps =
-  | (React.ComponentProps<typeof AccordionPrimitive.Root> & { type: "single" })
-  | (React.ComponentProps<typeof AccordionPrimitive.Root> & { type: "multiple" })
+  | (React.ComponentProps<typeof AccordionPrimitive.Root> & { type: "single"; children?: React.ReactNode })
+  | (React.ComponentProps<typeof AccordionPrimitive.Root> & { type: "multiple"; children?: React.ReactNode })
 
 const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
   return <AccordionPrimitive.Root ref={ref} data-slot="accordion" {...props} />
@@ -17,6 +17,7 @@ Accordion.displayName = "Accordion"
 // ---------- Item ----------
 type AccordionItemProps = React.ComponentProps<typeof AccordionPrimitive.Item> & {
   className?: string
+  children?: React.ReactNode
 }
 
 const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>(
@@ -80,4 +81,5 @@ const AccordionContent = React.forwardRef<HTMLDivElement, AccordionContentProps>
 )
 AccordionContent.displayName = "AccordionContent"
 
+// ---------- Export ----------
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
