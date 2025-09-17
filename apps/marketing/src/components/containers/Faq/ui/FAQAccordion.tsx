@@ -1,10 +1,5 @@
 import { FaqQuestions } from "@/constants/texts";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../../accordion/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../../accordion/accordion";
 
 interface Props {
   FAQ_QUESTIONS: FaqQuestions[];
