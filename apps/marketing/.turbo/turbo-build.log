@@ -5,7 +5,7 @@
    ▲ Next.js 15.4.6
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 6.0s
+ ✓ Compiled successfully in 4.0s
    Linting and checking validity of types ...
 
 ./src/components/containers/DashboardSidebar/ui/SidebarHeaderNavItem.tsx
@@ -28,7 +28,7 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
    Collecting build traces ...
 
 Route (app)                                 Size  First Load JS
-┌ ○ /                                    6.63 kB         128 kB
+┌ ○ /                                    6.58 kB         128 kB
 ├ ○ /_not-found                            984 B         101 kB
 ├ ○ /dashboard                           7.47 kB         148 kB
 ├ ○ /documents/policy                      131 B         100 kB
