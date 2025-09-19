@@ -5,17 +5,17 @@ interface SurfaceProps {
   as?: ElementType;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
 export const Surface: FC<SurfaceProps> = ({
   as: Tag = "section",
+  onClick,
   children,
   className,
 }) => {
   return (
-    <Tag
-      className={clsx("bg-white p-5 rounded-2xl md:px-10 md:py-6", className)}
-    >
+    <Tag onClick={onClick} className={clsx("bg-white rounded-2xl", className)}>
       {children}
     </Tag>
   );

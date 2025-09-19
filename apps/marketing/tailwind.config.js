@@ -5,6 +5,7 @@ import { COLORS } from "./src/config/colors.config";
 const tailwindConfig = {
   content: [
     "../../packages/**/*.{js,ts,jsx,tsx}", // все пакеты
+    "./src/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -17,6 +18,7 @@ const tailwindConfig = {
       },
       screens: {
         xsm: "500px",
+        xs: "380px"
       },
       scrollMargin: {
         header: "7rem",
@@ -29,6 +31,7 @@ const tailwindConfig = {
         orange: COLORS.orange,
         purple: COLORS.purple,
         blue: COLORS.blue,
+        ghostWhite: COLORS.ghostWhite
       },
     },
   },

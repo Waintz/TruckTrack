@@ -1,4 +1,4 @@
-import { Surface } from "@/components/ui/Surface/Surface";
+import { Surface } from "@/components/shared/Surface";
 import { RecentRequestHeader } from "./ui/RecentRequestHeader";
 import { RecentRequestsTable } from "./ui/RecentRequestsTable";
 import { IRecentRequests } from "@/types/truck";
@@ -10,7 +10,7 @@ interface Props {
 
 export function RecentRequestsView({ recentRequests }: Props) {
   return (
-    <Surface>
+    <Surface className="p-5 md:px-10 md:py-6">
       <RecentRequestHeader />
       <section className="mt-2">
         <RecentRequestsTable

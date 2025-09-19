@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 interface Props {
-  onClick: () => void;
+  onClick?: () => void;
   text?: string;
   className?: string;
 }

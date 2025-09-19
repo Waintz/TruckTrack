@@ -5,28 +5,37 @@
    ▲ Next.js 15.4.6
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 8.0s
+ ✓ Compiled successfully in 4.0s
    Linting and checking validity of types ...
 
-./src/components/containers/DelayedDelivery/DelayedDeliveryContainer.tsx
-71:10  Warning: 'selectedRow' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+./src/components/containers/DashboardSidebar/ui/SidebarHeaderNavItem.tsx
+21:3  Warning: 'active' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/containers/DashboardSidebar/ui/SidebarUserProfile.tsx
+1:8  Warning: 'Image' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/containers/DelayedDelivery/ui/DelayedDeliveryDrawerModal/DelayedDeliveryDrawerModal.tsx
+14:3  Warning: 'truckId' is defined but never used.  @typescript-eslint/no-unused-vars
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
    Collecting page data ...
-   Generating static pages (0/8) ...
-   Generating static pages (2/8) 
-   Generating static pages (4/8) 
-   Generating static pages (6/8) 
- ✓ Generating static pages (8/8)
+   Generating static pages (0/11) ...
+   Generating static pages (2/11) 
+   Generating static pages (5/11) 
+   Generating static pages (8/11) 
+ ✓ Generating static pages (11/11)
    Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                                 Size  First Load JS
-┌ ○ /                                    17.7 kB         127 kB
+┌ ○ /                                    6.58 kB         128 kB
 ├ ○ /_not-found                            984 B         101 kB
-├ ○ /dashboard                           5.83 kB         111 kB
-├ ○ /documents/policy                      123 B         100 kB
-└ ○ /documents/terms                      3.5 kB         104 kB
+├ ○ /dashboard                           7.47 kB         148 kB
+├ ○ /documents/policy                      131 B         100 kB
+├ ○ /documents/terms                      3.5 kB         104 kB
+├ ○ /shipments                             131 B         100 kB
+├ ○ /shipments/arrival                   3.22 kB         142 kB
+└ ○ /shipments/available                   179 B         139 kB
 + First Load JS shared by all             100 kB
   ├ chunks/87c73c54-1f4741035a95c140.js  54.1 kB
   ├ chunks/902-a1b735a0b0a65f38.js       43.9 kB

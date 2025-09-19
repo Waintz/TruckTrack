@@ -1,53 +1,53 @@
 import { PaginationText } from "@/components/elements/buttons/pagination/PaginationText";
 import { DelayedDeliveryTable } from "./ui/DelayedDeliveryTable/DelayedDeliveryTable";
 import { DelayedDeliveryCards } from "./ui/cards/DelayedDeliveryCards";
-import { DelayedDeliveryModal } from "./ui/DelayedDeliveryModal/DelayedDeliveryModal";
 import { ITruckDelivery } from "@/types/truck";
-import { Surface } from "@/components/ui/Surface/Surface";
+import { Surface } from "@/components/shared/Surface";
 import { DelayedDeliveryHeader } from "./ui/DelayedDeliveryHeader";
-
-type viewMode = "table" | "card" | null;
+import { DelayedDeliveryDrawerModal } from "./ui/DelayedDeliveryDrawerModal/DelayedDeliveryDrawerModal";
+import clsx from "clsx";
 
 interface Props {
   className?: string;
-  setViewMode: (mode: viewMode) => void;
-  viewMode: viewMode;
-  setSelectedRow: (truckInformation: ITruckDelivery) => void;
+  setSelectedRow: (truckInformation: ITruckDelivery | null) => void;
+  selectedRow?: ITruckDelivery | null;
   data: ITruckDelivery[];
 }
 
 export function DelayedDeliveryView({
   className,
   setSelectedRow,
-  setViewMode,
-  viewMode,
+  selectedRow,
   data,
 }: Props) {
-  const handleCardClick = (row: ITruckDelivery) => {
+  const handleRowClick = (row: ITruckDelivery) => {
     setSelectedRow(row);
-    setViewMode("card");
   };
 
   return (
-    <Surface className={className}>
-      <DelayedDeliveryHeader setViewMode={setViewMode} />
+    <Surface className={clsx(className, "p-5 md:px-10 md:py-6")}>
+      <DelayedDeliveryHeader />
 
-      <DelayedDeliveryTable limit={3} delayedDeliveryTrucks={data} />
+      <DelayedDeliveryTable
+        limit={3}
+        onRowClick={handleRowClick}
+        delayedDeliveryTrucks={data}
+      />
 
       <div className="md:hidden">
         <DelayedDeliveryCards
           delayedDeliveryTrucks={data.slice(0, 3)}
-          onCardClick={handleCardClick}
+          // onRowClick={handleRowClick}
         />
         <div className="text-center mt-4">
           <PaginationText text="Show all >" onClick={() => {}} />
         </div>
       </div>
 
-      {viewMode && (
-        <DelayedDeliveryModal
-          viewMode={viewMode}
-          onClose={() => setViewMode(null)}
+      {selectedRow && (
+        <DelayedDeliveryDrawerModal
+          truckId={selectedRow.id}
+          onClick={() => setSelectedRow(null)}
         />
       )}
     </Surface>

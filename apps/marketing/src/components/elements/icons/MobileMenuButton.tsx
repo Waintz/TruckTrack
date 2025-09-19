@@ -1,28 +1,30 @@
 "use client";
 
 import clsx from "clsx";
-import { useState } from "react";
 
 type MobileMenuButtonProps = {
-  ModalWindow?: React.ComponentType<{ onClose: () => void }>;
+  setIsOpen?: () => void;
+  isOpen?: boolean;
+  className?: string;
   gap?: string;
   color?: string;
 };
 
 export function MobileMenuButton({
-  ModalWindow,
+  className,
+  isOpen,
+  setIsOpen,
   color = "black",
-  gap = '1',
+  gap = "1",
 }: MobileMenuButtonProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
       <button
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={setIsOpen}
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
         className={clsx(
-          `relative w-8 h-8 flex flex-col justify-center items-center gap-${gap} lg:hidden z-50`
+          `relative w-8 h-8 flex flex-col justify-center items-center gap-${gap} z-20`,
+          className
         )}
         type="button"
       >
@@ -42,10 +44,6 @@ export function MobileMenuButton({
           ${isOpen ? "-rotate-45 -translate-y-[6px]" : ""}`}
         />
       </button>
-
-      {isOpen && ModalWindow && (
-        <ModalWindow onClose={() => setIsOpen(false)} />
-      )}
     </>
   );
 }

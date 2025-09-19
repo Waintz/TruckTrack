@@ -20,7 +20,7 @@ export function IconButton({
     <div
       onClick={onClick}
       className={clsx(
-        "bg-gray-50 p-3 rounded-full flex items-center justify-center",
+        "bg-ghost-white p-3 rounded-full flex items-center justify-center",
         className
       )}
     >

@@ -1,7 +1,11 @@
+'use client';
+
 import clsx from "clsx";
 
 interface TableListProps<RowType, HeaderType> {
   itemsData: RowType[];
+  rowsClassName?: string;
+  onClick?: (row: RowType) => void;
   headerColumns?: HeaderType[];
   renderColumnHeader?: (column: HeaderType) => React.ReactNode;
   renderRow: (row: RowType, index: number) => React.ReactNode;
@@ -12,6 +16,8 @@ interface TableListProps<RowType, HeaderType> {
 export function TableList<RowType, HeaderType>({
   itemsData,
   headerColumns,
+  onClick,
+  rowsClassName,
   renderRow,
   renderColumnHeader,
   className,
@@ -24,7 +30,7 @@ export function TableList<RowType, HeaderType>({
     : null;
 
   return (
-    <div className={clsx("grid gap-y-2", className)}>
+    <div className={clsx("grid ", className)}>
       {headerColumns && renderColumnHeader && (
         <div
           className="grid font-bold bg-gray-100 rounded-t-lg"
@@ -38,8 +44,9 @@ export function TableList<RowType, HeaderType>({
 
       {itemsData.map((row, idx) => (
         <div
+          onClick={() => onClick?.(row)}
           key={idx}
-          className="grid"
+          className={clsx("grid items-center", rowsClassName)}
           style={gridTemplateColumns ? { gridTemplateColumns } : undefined}
         >
           {renderRow(row, idx)}

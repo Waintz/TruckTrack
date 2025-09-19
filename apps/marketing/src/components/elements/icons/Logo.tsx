@@ -1,7 +1,14 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export function Logo({width = 150, height = 200}: {width?: number; height?: number}) {
+export function Logo({
+  width = 150,
+  height = 200,
+}: {
+  width?: number;
+  height?: number;
+  className?: string;
+}) {
   const router = useRouter();
 
   return (

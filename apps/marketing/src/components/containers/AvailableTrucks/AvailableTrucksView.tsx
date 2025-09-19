@@ -1,4 +1,4 @@
-import { Surface } from "@/components/ui/Surface/Surface";
+import { Surface } from "@/components/shared/Surface";
 import { AvailableTrucksHeader } from "./ui/AvailableTrucksHeader";
 import { AvailableTrucksTable } from "./ui/AvailableTrucksTable";
 import { ITruckLoad } from "@/types/truck";
@@ -10,7 +10,7 @@ interface Props {
 
 export function AvailableTrucksView({ truckLoad }: Props) {
   return (
-    <Surface>
+    <Surface className="p-5 md:px-10 md:py-6">
       <AvailableTrucksHeader />
 
       <section className="mt-3">

@@ -1,9 +1,11 @@
+import { COLORS, ColorsType } from "@/config/colors.config";
+
 export interface ITruckDelivery {
   id: number;
   destination: string;
   truck: string;
   arrive: string;
-  delay: number;
+  hasTruckArrived: boolean;
 }
 
 export interface IDailyMetric {
@@ -20,15 +22,30 @@ export interface ITruckLoad {
 }
 
 export type RecentRequestType =
-  | "Truck breakdown" // поломка грузовика
-  | "Warehouse delay" // задержка на складе
-  | "Route change" // изменение маршрута
-  | "Customs issue" // таможенный вопрос
+  | "Truck breakdown"
+  | "Warehouse delay"
+  | "Route change"
+  | "Customs issue"
   | "Other";
 
 export interface IRecentRequests {
   id: number;
+  truck: string;
   type: RecentRequestType;
   destination: string;
   timeAgo: string;
+}
+
+export const TruckStatusColors: Pick<ColorsType, "green" | "red" | "orange"> = {
+  green: COLORS.green,
+  orange: COLORS.orange,
+  red: COLORS.red,
+};
+
+export type TruckStatus = "Delayed" | "On way" | "Arrived";
+
+export interface IShipmentsArrival extends ITruckDelivery {
+  weight: number;
+  departure: string;
+  shipmentNumber: string;
 }

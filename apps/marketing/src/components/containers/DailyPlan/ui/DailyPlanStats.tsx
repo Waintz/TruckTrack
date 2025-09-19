@@ -6,7 +6,7 @@ interface Props {
 
 export function DailyPlanStats({ DailyMetric }: Props) {
   return (
-    <section className="flex flex-col gap-5">
+    <section className="flex flex-col gap-6">
       {DailyMetric.map((el) => {
         return (
           <div key={el.name} className="flex flex-col gap-1">
