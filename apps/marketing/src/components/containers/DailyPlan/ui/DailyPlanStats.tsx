@@ -1,4 +1,6 @@
+import { StatItem } from "@/components/ui/StatItem";
 import { IDailyMetric } from "@/types/truck";
+import React from "react";
 
 interface Props {
   DailyMetric: IDailyMetric[];
@@ -9,13 +11,12 @@ export function DailyPlanStats({ DailyMetric }: Props) {
     <section className="flex flex-col gap-6">
       {DailyMetric.map((el) => {
         return (
-          <div key={el.name} className="flex flex-col gap-1">
-            <p className="opacity-60">{el.name}</p>
-            <div className="text-lg">
-              <span className="font-semibold">{el.completed}</span>
-              <span className="opacity-50 ">/{el.total}</span>
-            </div>
-          </div>
+          <React.Fragment key={el.name}>
+            <StatItem
+              name={el.name}
+              progress={{ completed: el.completed, total: el.total }}
+            />
+          </React.Fragment>
         );
       })}
     </section>

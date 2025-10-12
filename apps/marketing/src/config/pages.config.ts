@@ -8,7 +8,16 @@ export const PAGES_CONFIG = {
     name: "Shipments",
     children: {
       ARRIVAL: { path: "/shipments/arrival", name: "Arrival" },
-      AVAILABLE: { path: "/shipments/available", name: "Available" },
+      AVAILABLE: {
+        path: "/shipments/available",
+        name: "Available",
+        children: {
+          TRUCK: {
+            path: (truckId?: string) => `/shipments/available/${truckId}`,
+            name: (truckId?: string) => truckId ?? "Truck",
+          },
+        },
+      },
       DEPARTURE: { path: "/shipments/departure", name: "Departure" },
     },
   },
@@ -19,7 +28,6 @@ export const PAGES_CONFIG = {
   NOTIFICATIONS: { path: "/notifications", name: "Notifications" },
 } as const;
 
-// с помощью bfs обход по дереву и ищешь короче то что нужно
 
 export const NAVIGATION_SHIPMENTS = [
   { ...PAGES_CONFIG.SHIPMENTS.children.ARRIVAL },

@@ -3,10 +3,27 @@ import { COLORS, ColorsType } from "@/config/colors.config";
 export interface ITruckDelivery {
   id: number;
   destination: string;
-  truck: string;
+  truckId: string;
   arrive: string;
+  departure: string;
   hasTruckArrived: boolean;
 }
+
+export interface ITruckShipmentsAdditionalInformation extends ITruckDelivery {
+  usedWeight: number;
+  totalWeight: number;
+  shipmentNumber: string | number;
+}
+
+export type ShipmentsInformationCardType = Pick<
+  ITruckShipmentsAdditionalInformation,
+  | "destination"
+  | "arrive"
+  | "totalWeight"
+  | "shipmentNumber"
+  | "truckId"
+  | "usedWeight"
+>;
 
 export interface IDailyMetric {
   name: string;
@@ -44,8 +61,9 @@ export const TruckStatusColors: Pick<ColorsType, "green" | "red" | "orange"> = {
 
 export type TruckStatus = "Delayed" | "On way" | "Arrived";
 
-export interface IShipmentsArrival extends ITruckDelivery {
-  weight: number;
-  departure: string;
-  shipmentNumber: string;
+export interface IParcel {
+  id: number;
+  parcelNumber: string;
+  valueWeight: number;
+  admissionDate: string;
 }

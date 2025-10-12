@@ -9,7 +9,7 @@ interface Props {
   size?: number;
 }
 
-export function IconButton({
+export function IconCircle({
   onClick,
   className,
   icon,

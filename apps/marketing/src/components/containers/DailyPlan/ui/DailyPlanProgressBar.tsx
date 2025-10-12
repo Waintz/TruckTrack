@@ -1,4 +1,4 @@
-import { ProgessBar } from "@/components/elements/ProgressBar/ProgessBar";
+import { ProgressBar } from "@/components/elements/ProgressBar/ProgessBar";
 
 interface Props {
   dailyProgress: number;
@@ -7,7 +7,7 @@ interface Props {
 export function DailyPlanProgressBar({ dailyProgress }: Props) {
   return (
     <section>
-      <ProgessBar
+      <ProgressBar
         className="sm:hidden"
         place="bottom up"
         text={true}
@@ -16,7 +16,7 @@ export function DailyPlanProgressBar({ dailyProgress }: Props) {
         dailyProgress={dailyProgress}
         fillingMode="normal"
       />
-      <ProgessBar
+      <ProgressBar
         className="hidden sm:block"
         place="bottom up"
         progressBarMode="semicircle"

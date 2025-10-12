@@ -1,5 +1,5 @@
-import { ProgessBar } from "@/components/elements/ProgressBar/ProgessBar";
-import { TableList } from "@/components/shared/TableList";
+import { ProgressBar } from "@/components/elements/ProgressBar/ProgessBar";
+import { TableList } from "@/components/shared/TableList/TableList";
 import { ITruckLoad } from "@/types/truck";
 import { getStrokeColor } from "@/utils/getStrokeColor";
 
@@ -15,7 +15,11 @@ export function AvailableTrucksTable({ truckLoad, limit }: Props) {
     <TableList
       itemsData={truckLoad}
       renderRow={(row, index) => {
-        const strokeColor = getStrokeColor(row.loaded, "normal");
+        const strokeColor = getStrokeColor({
+          percent: row.loaded,
+          fillingMode: "normal",
+          mode: "normal",
+        });
         return (
           <div
             key={row.id}
@@ -37,7 +41,7 @@ export function AvailableTrucksTable({ truckLoad, limit }: Props) {
               </div>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 opacity-70">
                 <p className="truncate text-sm">{row.destination}</p>
-                <ProgessBar
+                <ProgressBar
                   place="left right"
                   dailyProgress={row.loaded}
                   progressBarMode="line"
