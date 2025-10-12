@@ -1,4 +1,4 @@
-import { IconButton } from "@/components/elements/buttons/IconButton";
+import { IconCircle } from "@/components/elements/buttons/IconCircle";
 import { ITruckDelivery } from "@/types/truck";
 
 interface Props {
@@ -14,9 +14,9 @@ export function DelayedDeliveryCard({ truckInformation, onCardClick }: Props) {
     >
       <div>
         <div className="font-bold">{truckInformation.destination}</div>
-        <div className="text-gray-600">{truckInformation.truck}</div>
+        <div className="text-gray-600">{truckInformation.truckId}</div>
       </div>
-      <IconButton  
+      <IconCircle  
         icon="/icons/left-click.svg" 
         nameIcon="click" 
         size={30}

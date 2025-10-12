@@ -1,11 +1,12 @@
 "use client";
 
-import { RequestCallButton } from "../../elements/buttons/RequestCallButton";
 import { Logo } from "../../elements/icons/Logo";
 import { NavMenu } from "../../ui/navigation/NavMenu";
 import { MobileMenuButton } from "../../elements/icons/MobileMenuButton";
 import { MobileMenuModal } from "@/components/ui/navigation/MobileMenuModal";
 import { useModalState } from "@/hooks/useModalState";
+import { Button } from "@/components/ui/button/Button";
+import { COLORS } from "@/config/colors.config";
 
 export function HeaderMain() {
   const { handleStateChange, isOpen } = useModalState();
@@ -24,7 +25,14 @@ export function HeaderMain() {
         />
         {isOpen && <MobileMenuModal onClose={handleStateChange} />}
 
-        <RequestCallButton className="hidden lg:block h-10" />
+        <Button
+          text="Заказать звонок"
+          variant="outline"
+          ariaLabel="Заказать звонок"
+          color={COLORS.blue}
+          className="hidden lg:block"
+          paddingY={10}
+        />
       </section>
     </header>
   );

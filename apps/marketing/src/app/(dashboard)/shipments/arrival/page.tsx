@@ -1,6 +1,5 @@
 import { ShipmentsOverview } from "@/components/containers/ShipmentsOverview/ShipmentsOverview";
-import { ArrivalCards } from "@/components/containers/ShipmentsOverview/ui/arrival/ArrivalCards";
-import { ArrivalTable } from "@/components/containers/ShipmentsOverview/ui/arrival/ArrivalTable";
+import { ArrivalShipmentsContainer } from "@/components/containers/ShipmentsOverview/ui/arrival/ArrivalShipmentsContainer";
 import { TrackingFilters } from "@/components/containers/TrackingFilters/TrackingFilters";
 import { Metadata } from "next";
 import React from "react";
@@ -14,8 +13,7 @@ export default function Page() {
     <>
       <TrackingFilters />
       <ShipmentsOverview />
-      <ArrivalTable className="hidden xl:block" />
-      <ArrivalCards className="block xl:hidden mt-5"/>
+      <ArrivalShipmentsContainer />
     </>
   );
 }

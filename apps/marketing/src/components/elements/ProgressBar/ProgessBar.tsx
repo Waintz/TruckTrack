@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { IconButton } from "../buttons/IconButton";
+import { IconCircle } from "../buttons/IconCircle";
 import { ProgressBarLine } from "./ProgressBarLine";
 import {
   FillingMode,
@@ -8,6 +8,7 @@ import {
   StrokeColor,
 } from "@/types/progress";
 import { getStrokeColor } from "@/utils/getStrokeColor";
+import { ProgressBarTruck } from "./ProgressBarTruck";
 
 interface ProgessBarProps {
   dailyProgress?: number;
@@ -16,22 +17,28 @@ interface ProgessBarProps {
   className?: string;
   text?: boolean;
   textPlace?: "before" | "after";
+  mode?: "cell" | "normal";
   place?: ProgressBarLocation;
 }
 
-export function ProgessBar({
+export function ProgressBar({
   dailyProgress = 100,
   progressBarMode = "line",
   place = "bottom up",
   textPlace = "before",
   fillingMode = "normal",
   text = false,
+  mode = "normal",
   className,
 }: ProgessBarProps) {
   const strokeWidth = 8;
   const size = 50;
 
-  const strokeColor: StrokeColor = getStrokeColor(dailyProgress, fillingMode);
+  const strokeColor: StrokeColor = getStrokeColor({
+    percent: dailyProgress,
+    fillingMode,
+    mode: mode,
+  });
 
   const circumference = Math.PI * size;
   const svgSize = 2 * (size + strokeWidth);
@@ -70,7 +77,7 @@ export function ProgessBar({
             />
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-            <IconButton icon="/icons/like.svg" nameIcon="truck" size={30} />
+            <IconCircle icon="/icons/like.svg" nameIcon="truck" size={30} />
           </div>
           <div className="absolute inset-0 flex mb-1 flex-col items-center justify-end pointer-events-none">
             <div
@@ -95,6 +102,10 @@ export function ProgessBar({
           place={place}
           textPlace={textPlace}
         />
+      )}
+
+      {progressBarMode === "truck" && (
+        <ProgressBarTruck dailyProgress={dailyProgress} />
       )}
     </div>
   );

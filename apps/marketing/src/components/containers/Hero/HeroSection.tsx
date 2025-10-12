@@ -3,9 +3,10 @@ import { CTAButtons } from "./CTAButtons";
 import HighlightsList from "./HighlightsList";
 import { PageHeader } from "../../elements/typography/PageHeader";
 import { TimeSaving } from "../../elements/typography/TimeSaving";
-import { ConnectButton } from "../../elements/buttons/ConnectButton";
 import { HeroIllustration } from "../../elements/icons/HeroIllustration";
 import { SocialIcons } from "../../elements/icons/SocialIcons";
+import { Button } from "@/components/ui/button/Button";
+import { COLORS } from "@/config/colors.config";
 
 export const HeroSection = ({ className }: { className?: string }) => {
   return (
@@ -20,7 +21,12 @@ export const HeroSection = ({ className }: { className?: string }) => {
               <TimeSaving />
             </section>
             <section className="hidden lg:block">
-              <ConnectButton />
+              <Button
+                text="Подключиться"
+                variant="primary"
+                ariaLabel="Подключиться"
+                color={COLORS.blue}
+              />
             </section>
             <section className="mt-10">
               <HighlightsList />

@@ -1,7 +1,8 @@
-import { CallDriverButton } from "@/components/elements/buttons/CallDriverButton";
 import { UserProfileCard } from "@/components/elements/UserProfileCard";
+import { Button } from "@/components/ui/button/Button";
 import { DrawerLayout } from "@/components/ui/layouts/DrawerLayout";
-import { MessageCircle } from "lucide-react";
+import { COLORS } from "@/config/colors.config";
+import { MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 
 interface DelayedDeliveryDrawerModalProps {
@@ -103,7 +104,17 @@ export function DelayedDeliveryDrawerModal({
             </div>
           </div>
         </section>
-        <CallDriverButton className="w-full justify-center py-4" />
+        <Button
+          variant="primary"
+          text={
+            <>
+              <Phone size={20} /> Call the driver
+            </>
+          }
+          ariaLabel="Call the driver"
+          color={COLORS.purple}
+          className="w-full justify-center py-4 text-lg font-bold text-ghost-white rounded-lg"
+        />
       </article>
     </DrawerLayout>
   );

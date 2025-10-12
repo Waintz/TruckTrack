@@ -1,5 +1,5 @@
 import { DelayBadge } from "@/components/elements/DelayBadge";
-import { TableList } from "@/components/shared/TableList";
+import { TableList } from "@/components/shared/TableList/TableList";
 import { ITruckDelivery } from "@/types/truck";
 import { calculateDelay } from "@/utils/calculateDelay";
 import { formatIsoToDateTime } from "@/utils/formatIsoToDateTime";
@@ -54,7 +54,7 @@ export function DelayedDeliveryTable({
                   ? { borderBottom: "1px solid #e5e7eb" }
                   : {}
               }
-              className="p-3 whitespace-nowrap overflow-hidden text-ellipsis cursor-pointer hover:text-purple"
+              className="p-3 whitespace-nowrap overflow-hidden text-ellipsis"
             >
               {row.destination}
             </div>
@@ -66,7 +66,7 @@ export function DelayedDeliveryTable({
               }
               className="p-3 whitespace-nowrap overflow-hidden text-ellipsis"
             >
-              {row.truck}
+              {row.truckId}
             </div>
             <div
               style={
