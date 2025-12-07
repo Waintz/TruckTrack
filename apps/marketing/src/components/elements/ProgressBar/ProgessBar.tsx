@@ -1,20 +1,27 @@
 import clsx from "clsx";
-import { IconCircle } from "../buttons/IconCircle";
 import { ProgressBarLine } from "./ProgressBarLine";
-import {
-  FillingMode,
-  ProgressBarLocation,
-  ProgressBarMode,
-  StrokeColor,
-} from "@/types/progress";
 import { getStrokeColor } from "@/utils/getStrokeColor";
 import { ProgressBarTruck } from "./ProgressBarTruck";
+import { ProgressBarStar } from "./ProgressBarStar";
+import { ProgressBarSemicircle } from "./ProgressBarSemicircle";
+import {
+  ProgressBarLocation,
+  ProgressBarMode,
+} from "./type/types";
+import { FillingMode, StrokeColor } from "@/types/progress";
 
 interface ProgessBarProps {
+  progressBarMode: ProgressBarMode;
   dailyProgress?: number;
   fillingMode?: FillingMode;
-  progressBarMode: ProgressBarMode;
+  customColor?: StrokeColor;
   className?: string;
+  lineDimensions?: {
+    width?: string;
+    height?: string;
+  };
+  rating?: number;
+  maxStar?: number;
   text?: boolean;
   textPlace?: "before" | "after";
   mode?: "cell" | "normal";
@@ -25,77 +32,37 @@ export function ProgressBar({
   dailyProgress = 100,
   progressBarMode = "line",
   place = "bottom up",
+  customColor,
   textPlace = "before",
+  lineDimensions,
   fillingMode = "normal",
   text = false,
   mode = "normal",
   className,
+  maxStar,
+  rating,
 }: ProgessBarProps) {
-  const strokeWidth = 8;
-  const size = 50;
-
-  const strokeColor: StrokeColor = getStrokeColor({
-    percent: dailyProgress,
-    fillingMode,
-    mode: mode,
-  });
-
-  const circumference = Math.PI * size;
-  const svgSize = 2 * (size + strokeWidth);
+  const strokeColor: StrokeColor = customColor
+    ? customColor
+    : getStrokeColor({
+        percent: dailyProgress,
+        fillingMode,
+        mode: mode,
+      });
 
   return (
     <div className={clsx("relative", className)}>
       {progressBarMode === "semicircle" && (
-        <>
-          <svg
-            viewBox={`0 0 ${svgSize} ${size + strokeWidth}`}
-            className="w-full h-auto"
-          >
-            <path
-              d={`M${strokeWidth},${
-                size + strokeWidth
-              } A${size},${size} 0 0,1 ${2 * size + strokeWidth},${
-                size + strokeWidth
-              }`}
-              fill="none"
-              stroke="#e5e7eb"
-              strokeWidth={strokeWidth}
-            />
-            <path
-              d={`M${strokeWidth},${
-                size + strokeWidth
-              } A${size},${size} 0 0,1 ${2 * size + strokeWidth},${
-                size + strokeWidth
-              }`}
-              fill="none"
-              stroke={strokeColor}
-              strokeWidth={strokeWidth}
-              strokeDasharray={`${
-                circumference * (dailyProgress / 100)
-              } ${circumference}`}
-              style={{ transition: "stroke-dasharray 1s ease-out" }}
-            />
-          </svg>
-          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-            <IconCircle icon="/icons/like.svg" nameIcon="truck" size={30} />
-          </div>
-          <div className="absolute inset-0 flex mb-1 flex-col items-center justify-end pointer-events-none">
-            <div
-              className="font-semibold text-2xl"
-              style={{ color: strokeColor }}
-            >
-              {dailyProgress}%
-            </div>
-          </div>
-          <div className="flex opacity-60 justify-between mt-3">
-            <div className="ml-2">0%</div>
-            <div>100%</div>
-          </div>
-        </>
+        <ProgressBarSemicircle
+          dailyProgress={dailyProgress}
+          strokeColor={strokeColor}
+        />
       )}
 
       {progressBarMode === "line" && (
         <ProgressBarLine
+          height={lineDimensions?.height}
+          width={lineDimensions?.width}
           dailyProgress={dailyProgress}
           strokeColor={strokeColor}
           text={text}
@@ -105,7 +72,14 @@ export function ProgressBar({
       )}
 
       {progressBarMode === "truck" && (
-        <ProgressBarTruck dailyProgress={dailyProgress} />
+        <ProgressBarTruck
+          strokeColor={strokeColor}
+          dailyProgress={dailyProgress}
+        />
+      )}
+
+      {progressBarMode === "star" && (
+        <ProgressBarStar rating={rating || 5} maxStar={maxStar} />
       )}
     </div>
   );

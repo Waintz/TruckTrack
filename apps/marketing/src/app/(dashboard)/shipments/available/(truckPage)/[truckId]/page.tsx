@@ -1,4 +1,4 @@
-import { TruckPage } from "@/components/containers/TruckPage/TruckPage";
+import { TruckAvailablePage } from "@/components/containers/TruckPage/available/TruckAvailablePage";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs/Breadcrumbs";
 
 export default function Page() {
@@ -7,7 +7,7 @@ export default function Page() {
       <Breadcrumbs
         excludes={[""]}
       />
-      <TruckPage className="p-2" />
+      <TruckAvailablePage className="p-2" />
     </>
   );
 }

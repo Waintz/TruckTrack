@@ -13,14 +13,10 @@ export function DelayedDeliveryCard({ truckInformation, onCardClick }: Props) {
       onClick={() => onCardClick?.(truckInformation)}
     >
       <div>
-        <div className="font-bold">{truckInformation.destination}</div>
+        <div className="font-bold">{truckInformation.arriveLocation}</div>
         <div className="text-gray-600">{truckInformation.truckId}</div>
       </div>
-      <IconCircle  
-        icon="/icons/left-click.svg" 
-        nameIcon="click" 
-        size={30}
-      />
+      <IconCircle icon="/icons/left-click.svg" nameIcon="click" size={30} />
     </div>
   );
 }

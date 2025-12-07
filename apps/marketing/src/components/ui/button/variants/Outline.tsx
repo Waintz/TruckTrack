@@ -4,7 +4,7 @@ import { OutlineProps } from "../button.types";
 export function Outline({
   color = "#f6f5fa",
   ariaLabel,
-  text,
+  children,
   paddingY,
   className,
   onClick,
@@ -24,7 +24,7 @@ export function Outline({
       }}
       aria-label={ariaLabel}
     >
-      <p>{text}</p>
+      <p>{children}</p>
     </button>
   );
 }

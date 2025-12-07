@@ -40,7 +40,7 @@ export function DelayedDeliveryTable({
         </div>
       )}
       renderRow={(row, index) => {
-        const delay = calculateDelay(row.arrive);
+        const delay = calculateDelay(row.arriveDate);
         const formattedDelayToHHMM =
           delay.delaySeconds >= 0
             ? formatMinutesToHHMM({ time: delay.delayMinutes })
@@ -56,7 +56,7 @@ export function DelayedDeliveryTable({
               }
               className="p-3 whitespace-nowrap overflow-hidden text-ellipsis"
             >
-              {row.destination}
+              {row.departureLocation} - {row.arriveLocation}
             </div>
             <div
               style={
@@ -76,7 +76,7 @@ export function DelayedDeliveryTable({
               }
               className="p-3 whitespace-nowrap overflow-hidden text-ellipsis"
             >
-              {formatIsoToDateTime({ time: row.arrive })}
+              {formatIsoToDateTime({ time: row.arriveDate })}
             </div>
             <div
               style={

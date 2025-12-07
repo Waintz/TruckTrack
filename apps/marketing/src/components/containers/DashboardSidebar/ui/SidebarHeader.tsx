@@ -2,46 +2,28 @@
 
 import { Logo } from "@/components/elements/icons/Logo";
 import { SidebarHeaderNavItem } from "./SidebarHeaderNavItem";
-
-type SidebarHeaderNav = {
-  name: string;
-  lucideIcon?: string;
-  pathIcon?: string;
-  path: string;
-  count?: number | string;
-};
-
-const SIDEBAR_HEADER_NAV: SidebarHeaderNav[] = [
-  {
-    name: "Requests",
-    lucideIcon: "Info",
-    path: "/requests",
-    count: 10,
-  },
-  {
-    name: "Notifications",
-    lucideIcon: "Bell",
-    path: "/requests",
-    count: 1,
-  },
-];
+import { PAGES_CONFIG } from "@/config/pages.config";
 
 export function SidebarHeader() {
   return (
     <header className="border-b-4 border-ghost-white">
-      <main className="px-5 py-10">
-        <Logo />
-        <section className="flex flex-col gap-3 mt-15 font-bold text-md">
-          {SIDEBAR_HEADER_NAV.map((item) => (
-            <SidebarHeaderNavItem
-              path={item.path}
-              key={item.name}
-              count={item.count}
-              lucideIcon={item.lucideIcon}
-              pathIcon={item.pathIcon}
-              name={item.name}
-            />
-          ))}
+      <main className="py-10">
+        <section className="px-5">
+          <Logo />
+        </section>
+        <section className="flex flex-col gap-1 mt-15 font-bold text-md ">
+          <SidebarHeaderNavItem
+            path={PAGES_CONFIG.REQUESTS.path}
+            lucideIcon={"Info"}
+            name={PAGES_CONFIG.REQUESTS.name}
+            count={10}
+          />
+          <SidebarHeaderNavItem
+            path={PAGES_CONFIG.NOTIFICATIONS.path}
+            lucideIcon={"Bell"}
+            name={PAGES_CONFIG.NOTIFICATIONS.name}
+            count={1}
+          />
         </section>
       </main>
     </header>

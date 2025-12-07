@@ -1,20 +1,14 @@
-import { ProgressBarLocation } from "@/types/progress";
-
-interface Props {
-  text?: boolean;
-  textPlace?: "before" | "after";
-  dailyProgress: number;
-  place?: ProgressBarLocation;
-  strokeColor: string;
-}
+import { LineTypes } from "./type/types";
 
 export function ProgressBarLine({
   text = false,
   textPlace = "after",
+  width,
+  height,
   place = "bottom up",
   dailyProgress,
   strokeColor,
-}: Props) {
+}: LineTypes) {
   const isVertical = place === "bottom up" || place === "top down";
   const isReverse = place === "bottom up" || place === "right left";
 
@@ -30,7 +24,13 @@ export function ProgressBarLine({
         className={`bg-gray-300 rounded overflow-hidden ${
           isVertical ? "w-1 h-50" : "h-1 w-30 sm:w-50 lg:w-100 xl:w-50"
         } ${isReverse ? (isVertical ? "rotate-180" : "flex-row-reverse") : ""}`}
-        style={{ display: "flex" }}
+        style={{
+          display: "flex",
+          ...(width && !isVertical ? { width } : {}),
+          ...(height && !isVertical ? { height } : {}),
+          ...(isVertical && width ? { width } : {}),
+          ...(isVertical && height ? { height } : {}),
+        }}
       >
         <div
           className={`transition-all duration-1000 ease-out ${

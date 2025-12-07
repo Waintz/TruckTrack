@@ -1,26 +1,30 @@
 import clsx from "clsx";
 
 export interface IStatItemProps {
-  name: string;
+  title: string;
   className?: string;
+  classNameTitle?: string;
   classNameProgress?: string;
   progress?: {
     completed?: string | number;
     total?: string | number;
   };
   value?: string;
+  classNameValue?: string;
 }
 
 export function StatItem({
-  name,
+  title,
   progress,
   value,
   className,
+  classNameTitle,
   classNameProgress,
+  classNameValue,
 }: IStatItemProps) {
   return (
-    <div key={name} className="flex flex-col gap-1">
-      <p className={clsx("opacity-60", className)}>{name}</p>
+    <div key={title} className={clsx("flex flex-col gap-1", className)}>
+      <p className={clsx("opacity-60 overflow-hidden overflow-ellipsis whitespace-nowrap flex-1", classNameTitle)}>{title}</p>
       <div className="text-md">
         {progress && progress.completed && progress.total && (
           <>
@@ -32,7 +36,9 @@ export function StatItem({
             </span>
           </>
         )}
-        {value && <span className="font-semibold">{value}</span>}
+        {value && (
+          <span className={clsx("", classNameValue)}>{value}</span>
+        )}
       </div>
     </div>
   );

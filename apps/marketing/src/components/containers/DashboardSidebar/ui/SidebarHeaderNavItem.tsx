@@ -1,5 +1,6 @@
 "use client";
 
+import { useIsActiveRoute } from "@/hooks/useIsActiveRoute";
 import clsx from "clsx";
 import { icons } from "lucide-react";
 import Image from "next/image";
@@ -9,7 +10,6 @@ interface Props {
   name?: string;
   count?: number | string;
   lucideIcon?: string;
-  active?: boolean;
   path: string;
   pathIcon?: string;
   className?: string;
@@ -18,7 +18,6 @@ interface Props {
 export function SidebarHeaderNavItem({
   lucideIcon,
   pathIcon,
-  active = false,
   path,
   count,
   name,
@@ -26,25 +25,34 @@ export function SidebarHeaderNavItem({
 }: Props) {
   const Icon = icons[lucideIcon as keyof typeof icons];
   const router = useRouter();
+  const isActiveRoute = useIsActiveRoute(path);
 
   return (
     <button
       onClick={() => router.push(path)}
       className={clsx(
-        "flex justify-between items-center cursor-pointer",
+        "flex justify-between items-center cursor-pointer px-5 py-2",
+        isActiveRoute && "bg-ghost-white",
         className
       )}
     >
-      <p className="flex gap-2 opacity-50">
+      <p className={clsx("flex gap-2")}>
         {lucideIcon && Icon ? (
-          <Icon />
+          <Icon
+            className={clsx(isActiveRoute ? "text-purple opacity-100" : "opacity-50")}
+          />
         ) : (
           <Image src={pathIcon} width={25} height={25} alt={"icon"} />
         )}
-        {name}
+        <span className="opacity-50">{name}</span>
       </p>
       {count && (
-        <p className="bg-ghost-white rounded min-w-8 min-h-8 flex justify-center items-center">
+        <p
+          className={clsx(
+            "rounded min-w-8 min-h-8 flex justify-center items-center",
+            isActiveRoute ? "bg-white" : "bg-ghost-white"
+          )}
+        >
           <span className="opacity-50">{count}</span>
         </p>
       )}

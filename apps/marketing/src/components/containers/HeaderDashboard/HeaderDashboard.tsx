@@ -21,17 +21,14 @@ export function HeaderDashboard({ className }: { className?: string }) {
       <div className="flex gap-5 items-center">
         <Button
           variant="primary"
-          text={
-            <>
-              <Plus />
-            </>
-          }
           ariaLabel="Create shipment"
           color={COLORS.purple}
           className="font-bold"
           paddingY={10}
           paddingX={20}
-        />
+        >
+          <Plus />
+        </Button>
         <div className="bg-[#6940db]/10 rounded-lg p-1">
           <MobileMenuButton gap="1" color={COLORS.purple} />
         </div>

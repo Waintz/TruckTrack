@@ -26,13 +26,14 @@ export function HeaderMain() {
         {isOpen && <MobileMenuModal onClose={handleStateChange} />}
 
         <Button
-          text="Заказать звонок"
           variant="outline"
           ariaLabel="Заказать звонок"
           color={COLORS.blue}
           className="hidden lg:block"
           paddingY={10}
-        />
+        >
+          Заказать звонок
+        </Button>
       </section>
     </header>
   );

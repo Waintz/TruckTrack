@@ -1,7 +1,7 @@
 import { ShipmentsOverview } from "@/components/containers/ShipmentsOverview/ShipmentsOverview";
 import { AvailableShipmentsContainer } from "@/components/containers/ShipmentsOverview/ui/available/AvailableShipmentsContainer";
-import { TrackingFilters } from "@/components/containers/TrackingFilters/TrackingFilters";
 import { Metadata } from "next";
+import { BaseFilters } from "@/components/containers/FiltersBar/presets/BaseFilters";
 
 export const metadata: Metadata = {
   title: "Available",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <TrackingFilters />
+      <BaseFilters />
       <ShipmentsOverview />
       <AvailableShipmentsContainer />
     </>

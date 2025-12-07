@@ -10,36 +10,28 @@ import { formatMinutesToHHMM } from "@/utils/formatMinutesToHHMM";
 import { getTruckStatus } from "@/utils/getTruckStatus";
 import { useState } from "react";
 import { ArrivalInfoRow } from "./ArrivalInfoRow";
+import { ITruckShipmentsAdditionalInformation } from "@/types/truck";
 
 export function ArrivalCard({
   arrivalCardsData,
 }: {
-  arrivalCardsData: {
-    id: number;
-    destination: string;
-    truck: string;
-    shipmentNumber: string;
-    departure: string;
-    arrive: string;
-    weight: number;
-    hasTruckArrived: boolean;
-  };
+  arrivalCardsData: ITruckShipmentsAdditionalInformation;
 }) {
-  const delay = calculateDelay(arrivalCardsData.departure);
+  const delay = calculateDelay(arrivalCardsData.departureDate);
 
   const formattedDepartureDate = formatIsoToDateTime({
-    time: arrivalCardsData.departure,
+    time: arrivalCardsData.departureDate,
     options: { month: true, day: true, hours: true, minutes: true },
   });
 
   const formattedArrivalDate = formatIsoToDateTime({
-    time: arrivalCardsData.arrive,
+    time: arrivalCardsData.arriveDate,
     options: { month: true, day: true, hours: true, minutes: true },
   });
 
   const truckStatus = getTruckStatus(
-    arrivalCardsData.departure,
-    arrivalCardsData.arrive,
+    arrivalCardsData.departureDate,
+    arrivalCardsData.arriveDate,
     arrivalCardsData.hasTruckArrived
   );
 
@@ -52,13 +44,16 @@ export function ArrivalCard({
   };
 
   const rows = [
-    { label: "Destination:", value: arrivalCardsData.destination },
+    {
+      label: "Destination:",
+      value: `${arrivalCardsData.arriveLocation} - ${arrivalCardsData.departureLocation}`,
+    },
     {
       label: "Shipment number:",
       value: arrivalCardsData.shipmentNumber,
     },
-    { label: "Truck:", value: arrivalCardsData.truck },
-    { label: "Total weight, kg:", value: arrivalCardsData.weight },
+    { label: "Truck:", value: arrivalCardsData.truckId },
+    { label: "Total weight, kg:", value: arrivalCardsData.usedWeight },
     {
       label: "Status:",
       value: <DelayBadge text={truckStatus} delay={delay.delayMinutes} />,
@@ -75,7 +70,10 @@ export function ArrivalCard({
         className="flex items-center justify-between"
       >
         <h2 className="text-lg font-semibold text-gray-800">
-          {arrivalCardsData.truck} <span className="hidden sm:inline">| {arrivalCardsData.destination}</span>
+          {arrivalCardsData.truckId}{" "}
+          <span className="hidden sm:inline">
+            | {arrivalCardsData.arriveLocation}
+          </span>
         </h2>
         <p className="flex items-center gap-5">
           <span className="hidden xs:inline text-sm text-gray-500">

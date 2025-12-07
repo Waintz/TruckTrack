@@ -6,7 +6,7 @@ export function Primary({
   color = COLORS.ghostWhite,
   colorText = COLORS.white,
   ariaLabel,
-  text,
+  children,
   paddingY,
   paddingX,
   className,
@@ -29,7 +29,7 @@ export function Primary({
       }}
       aria-label={ariaLabel}
     >
-      <p className="flex font-bold items-center justify-center gap-2">{text}</p>
+      <p className="flex font-bold items-center justify-center gap-2">{children}</p>
     </button>
   );
 }

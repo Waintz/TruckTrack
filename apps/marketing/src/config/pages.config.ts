@@ -18,16 +18,24 @@ export const PAGES_CONFIG = {
           },
         },
       },
-      DEPARTURE: { path: "/shipments/departure", name: "Departure" },
+      DEPARTURE: {
+        path: "/shipments/departure",
+        name: "Departure",
+        children: {
+          TRUCK: {
+            path: (truckId?: string) => `/shipments/departure/${truckId}`,
+            name: (truckId?: string) => truckId ?? "Truck",
+          },
+        },
+      },
     },
   },
   PARCELS: { path: "/parcels", name: "Parcels" },
   BRANCHES: { path: "/branches", name: "Branches" },
-  CLIENTS: { path: "/clients", name: "Clients" },
   REQUESTS: { path: "/requests", name: "Requests" },
+  CLIENTS: { path: "/clients", name: "Clients" },
   NOTIFICATIONS: { path: "/notifications", name: "Notifications" },
 } as const;
-
 
 export const NAVIGATION_SHIPMENTS = [
   { ...PAGES_CONFIG.SHIPMENTS.children.ARRIVAL },

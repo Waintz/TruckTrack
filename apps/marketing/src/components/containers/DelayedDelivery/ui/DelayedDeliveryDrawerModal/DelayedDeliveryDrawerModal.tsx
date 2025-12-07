@@ -106,15 +106,12 @@ export function DelayedDeliveryDrawerModal({
         </section>
         <Button
           variant="primary"
-          text={
-            <>
-              <Phone size={20} /> Call the driver
-            </>
-          }
           ariaLabel="Call the driver"
           color={COLORS.purple}
           className="w-full justify-center py-4 text-lg font-bold text-ghost-white rounded-lg"
-        />
+        >
+          <Phone size={20} /> Call the driver
+        </Button>
       </article>
     </DrawerLayout>
   );

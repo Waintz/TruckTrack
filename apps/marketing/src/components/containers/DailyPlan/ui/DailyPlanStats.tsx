@@ -13,7 +13,7 @@ export function DailyPlanStats({ DailyMetric }: Props) {
         return (
           <React.Fragment key={el.name}>
             <StatItem
-              name={el.name}
+              title={el.name}
               progress={{ completed: el.completed, total: el.total }}
             />
           </React.Fragment>

@@ -1,7 +1,7 @@
 import { COLORS } from "@/config/colors.config";
 import clsx from "clsx";
 import { Check } from "lucide-react";
-import { KeyboardEvent, useState } from "react";
+import { KeyboardEvent } from "react";
 
 interface ICheckboxDefault {
   className?: string;
