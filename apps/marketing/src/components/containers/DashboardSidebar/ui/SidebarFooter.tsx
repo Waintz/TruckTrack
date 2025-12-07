@@ -10,15 +10,12 @@ export function SidebarFooter() {
         <div className="px-2">
           <Button
             variant="primary"
-            text={
-              <>
-                <Plus /> Create shipment
-              </>
-            }
             ariaLabel="Create shipment"
             color={COLORS.purple}
             className="rounded-lg font-bold w-full mb-10"
-          />
+          >
+            <Plus /> Create shipment
+          </Button>
         </div>
       </div>
       <SidebarUserProfile />

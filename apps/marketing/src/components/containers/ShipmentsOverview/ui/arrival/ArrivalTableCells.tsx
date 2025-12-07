@@ -11,10 +11,10 @@ interface ArrivalTableCellsProps {
 }
 
 export function ArrivalTableCells({ row }: ArrivalTableCellsProps) {
-  const delay = calculateDelay(row.arrive);
+  const delay = calculateDelay(row.arriveDate);
   const truckStatus = getTruckStatus(
-    row.departure,
-    row.arrive,
+    row.departureDate,
+    row.arriveDate,
     row.hasTruckArrived
   );
   const formattedDelay =
@@ -22,7 +22,9 @@ export function ArrivalTableCells({ row }: ArrivalTableCellsProps) {
 
   return (
     <>
-      <ArrivalTableCell>{row.destination}</ArrivalTableCell>
+      <ArrivalTableCell>
+        {row.departureLocation} - {row.arriveLocation}
+      </ArrivalTableCell>
       <ArrivalTableCell>{row.shipmentNumber}</ArrivalTableCell>
       <ArrivalTableCell>{row.truckId}</ArrivalTableCell>
       <ArrivalTableCell>{row.totalWeight}</ArrivalTableCell>
@@ -31,13 +33,13 @@ export function ArrivalTableCells({ row }: ArrivalTableCellsProps) {
       </ArrivalTableCell>
       <ArrivalTableCell>
         {formatIsoToDateTime({
-          time: row.departure,
+          time: row.departureDate,
           options: { day: true, hours: true, minutes: true, month: true },
         })}
       </ArrivalTableCell>
       <ArrivalTableCell>
         {formatIsoToDateTime({
-          time: row.arrive,
+          time: row.arriveDate,
           options: { day: true, hours: true, minutes: true, month: true },
         })}
       </ArrivalTableCell>

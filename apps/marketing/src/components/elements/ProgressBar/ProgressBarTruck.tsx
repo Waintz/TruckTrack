@@ -1,11 +1,12 @@
 import { getStrokeColor } from "@/utils/getStrokeColor";
 import Image from "next/image";
+import { TruckTypes } from "./type/types";
 
 export const ProgressBarTruck = ({
-  dailyProgress = 100,
+  dailyProgress,
   width = 200,
   height = 100,
-}) => {
+}: TruckTypes) => {
   const strokeColor = getStrokeColor({
     percent: dailyProgress,
     fillingMode: "normal",

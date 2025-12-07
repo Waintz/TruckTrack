@@ -12,7 +12,7 @@ export type ButtonVariant =
   | "success";
 
 interface BaseProps {
-  text: React.ReactNode;
+  children: React.ReactNode;
   ariaLabel?: string;
   paddingY?: number;
   colorText?: ColorsValue;

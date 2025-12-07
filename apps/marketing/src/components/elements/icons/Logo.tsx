@@ -7,7 +7,6 @@ export function Logo({
 }: {
   width?: number;
   height?: number;
-  className?: string;
 }) {
   const router = useRouter();
 

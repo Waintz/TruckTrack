@@ -1,1 +1,1 @@
-export type CheckboxVariat = "default"
+export type CheckboxVariat = "default" | "primary"

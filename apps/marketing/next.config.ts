@@ -3,7 +3,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [""],
+    domains: [
+      "images.unsplash.com",
+      "encrypted-tbn0.gstatic.com",
+      "192.168.0.103",
+      "192.168.240.1"
+    ],
   },
   async redirects() {
     return [

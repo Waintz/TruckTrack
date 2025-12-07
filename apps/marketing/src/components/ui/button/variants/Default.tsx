@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { DefaultProps } from "../button.types";
 
 export function Default({
-  text,
+  children,
   ariaLabel,
   className,
   color,
@@ -28,7 +28,7 @@ export function Default({
         paddingRight: paddingX,
       }}
     >
-      {text}
+      {children}
     </button>
   );
 }

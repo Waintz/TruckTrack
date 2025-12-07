@@ -22,11 +22,12 @@ export const HeroSection = ({ className }: { className?: string }) => {
             </section>
             <section className="hidden lg:block">
               <Button
-                text="Подключиться"
                 variant="primary"
                 ariaLabel="Подключиться"
                 color={COLORS.blue}
-              />
+              >
+                Подключиться
+              </Button>
             </section>
             <section className="mt-10">
               <HighlightsList />

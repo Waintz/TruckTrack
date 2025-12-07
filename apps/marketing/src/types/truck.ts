@@ -2,10 +2,11 @@ import { COLORS, ColorsType } from "@/config/colors.config";
 
 export interface ITruckDelivery {
   id: number;
-  destination: string;
   truckId: string;
-  arrive: string;
-  departure: string;
+  arriveDate: string;
+  departureDate: string;
+  arriveLocation: string;
+  departureLocation: string;
   hasTruckArrived: boolean;
 }
 
@@ -17,8 +18,10 @@ export interface ITruckShipmentsAdditionalInformation extends ITruckDelivery {
 
 export type ShipmentsInformationCardType = Pick<
   ITruckShipmentsAdditionalInformation,
-  | "destination"
-  | "arrive"
+  | "arriveLocation"
+  | "departureDate"
+  | "departureLocation"
+  | "arriveDate"
   | "totalWeight"
   | "shipmentNumber"
   | "truckId"
@@ -67,3 +70,27 @@ export interface IParcel {
   valueWeight: number;
   admissionDate: string;
 }
+
+export const TECH_INFO_KEYS = {
+  FUEL_LEVEL: "Fuel level",
+  ENGINE_TEMP: "Engine temp",
+  DISTANCE_TRAVELED: "Distance traveled",
+  TIRE_PRESSURE: "Tire pressure",
+  FUEL_CONSUMPTION: "Fuel consumption",
+  LAST_MAINTENANCE: "Last maintenance",
+  AVERAGE_SPEED: "Average speed",
+  OIL_CONDITION: "Oil condition",
+} as const;
+
+export type TechnicalPossibleNotes = "date";
+
+export type VariantTechnicalInformation =
+  typeof TECH_INFO_KEYS[keyof typeof TECH_INFO_KEYS];
+
+export type TechnicalInformationTruck = {
+  [K in VariantTechnicalInformation]?: {
+    value: string;
+    unit?: string;
+    note?: TechnicalPossibleNotes;
+  };
+};

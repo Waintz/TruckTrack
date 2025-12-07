@@ -1,5 +1,6 @@
 import { CheckboxVariat } from "./checkbox.types";
 import { CheckboxDefault } from "./variats/CheckboxDefault";
+import { CheckboxPrimary } from "./variats/CheckboxPrimary";
 
 interface ICheckbox {
   variat: CheckboxVariat;
@@ -12,6 +13,10 @@ export function Checkbox({ variat, checked, onCheckedChange }: ICheckbox) {
     case "default":
       return (
         <CheckboxDefault checked={checked} onCheckedChange={onCheckedChange} />
+      );
+    case "primary":
+      return (
+        <CheckboxPrimary checked={checked} onCheckedChange={onCheckedChange} />
       );
     default:
       return null;

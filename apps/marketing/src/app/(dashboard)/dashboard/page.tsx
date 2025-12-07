@@ -1,5 +1,5 @@
 import { DashboardOverview } from "@/components/containers/DashboardOverview/DashboardOverview";
-import { TrackingFilters } from "@/components/containers/TrackingFilters/TrackingFilters";
+import { BaseFilters } from "@/components/containers/FiltersBar/presets/BaseFilters";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <div className="min-h-screen flex">
       <main className="flex-1 p-5">
-        <TrackingFilters />
+        <BaseFilters />
         <DashboardOverview />
       </main>
     </div>

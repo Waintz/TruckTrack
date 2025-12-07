@@ -20,18 +20,18 @@ export function AvailableCardMainInformation({
   const StatsData = useMemo((): IStatItemProps[] => {
     return [
       {
-        name: "Available, kg",
+        title: "Available, kg",
         progress: {
           completed: usedWeight,
           total: totalWeight,
         },
       },
       {
-        name: "Shipment number",
+        title: "Shipment number",
         value: String(shipmentNumber),
       },
       {
-        name: "Truck",
+        title: "Truck",
         value: truckId,
       },
     ];
@@ -40,9 +40,9 @@ export function AvailableCardMainInformation({
   return (
     <section className={clsx("flex flex-col gap-4", className)}>
       {StatsData.map((item) => (
-        <React.Fragment key={item.name}>
+        <React.Fragment key={item.title}>
           <StatItem
-            name={item.name}
+            title={item.title}
             progress={{
               completed: item.progress?.completed,
               total: item.progress?.total,
