@@ -5,24 +5,14 @@
    ▲ Next.js 16.0.7 (Turbopack)
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 6.5s
+ ✓ Compiled successfully in 12.9s
    Running TypeScript ...
-
-   We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
-   The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
-
-   	- include was updated to add '.next/dev/types/**/*.ts'
-
-   The following mandatory changes were made to your tsconfig.json:
-
-   	- jsx was set to react-jsx (next.js uses the React automatic runtime)
-
    Collecting page data using 11 workers ...
    Generating static pages using 11 workers (0/16) ...
    Generating static pages using 11 workers (4/16) 
    Generating static pages using 11 workers (8/16) 
    Generating static pages using 11 workers (12/16) 
- ✓ Generating static pages using 11 workers (16/16) in 1425.4ms
+ ✓ Generating static pages using 11 workers (16/16) in 3.2s
    Finalizing page optimization ...
 
 Route (app)

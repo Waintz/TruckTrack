@@ -4,7 +4,7 @@ import { Surface } from "@/components/shared/Surface";
 import { ProgressBar } from "@/components/elements/ProgressBar/ProgessBar";
 import { calculatePercentage } from "@/utils/calculatePercentage";
 import { ShipmentsInformationCardType } from "@/types/truck";
-import { AvailableCardMainInformation } from "@/components/containers/ShipmentsOverview/ui/available/AvailableCardMainInformation";
+import { AvailableCardMainInformation } from "@/components/features/dashboard/ShipmentsOverview/ui/Available/AvailableCardMainInformation";
 
 export function TruckDetailsCard({
   totalWeight,

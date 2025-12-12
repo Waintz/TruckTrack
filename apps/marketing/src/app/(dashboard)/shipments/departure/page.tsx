@@ -1,6 +1,6 @@
-import { ShipmentsOverview } from "@/components/containers/ShipmentsOverview/ShipmentsOverview";
-import { DepartureShipmentsContainer } from "@/components/containers/ShipmentsOverview/ui/departure/DepartureShipmentsContainer";
-import { BaseFilters } from "@/components/containers/FiltersBar/presets/BaseFilters";
+import { ShipmentsOverview } from "@/components/features/dashboard/ShipmentsOverview/ShipmentsOverview";
+import { DepartureShipmentsContainer } from "@/components/features/dashboard/ShipmentsOverview/ui/Departure/DepartureShipmentsContainer";
+import { BaseFilters } from "@/components/features/dashboard/FiltersBar/presets/BaseFilters";
 
 export default function Page() {
   return (

@@ -1,5 +1,5 @@
-import { DashboardOverview } from "@/components/containers/DashboardOverview/DashboardOverview";
-import { BaseFilters } from "@/components/containers/FiltersBar/presets/BaseFilters";
+import { DashboardOverview } from "@/components/features/dashboard/DashboardOverview/DashboardOverview";
+import { BaseFilters } from "@/components/features/dashboard/FiltersBar/presets/BaseFilters";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

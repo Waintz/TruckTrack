@@ -1,12 +1,12 @@
 export const dynamic = "force-static";
 
-import { FAQSection } from "@/components/containers/Faq/FAQSection";
-import { HeroSection } from "@/components/containers/Hero/HeroSection";
-import { HowItWorksSection } from "@/components/containers/HowItWork/HowItWorksSection";
-import { PartnersSection } from "@/components/containers/Partners/PartnersSection";
-import { ServiceIntro } from "@/components/containers/ServiceIntro/ServiceIntro";
-import { TeamSection } from "@/components/containers/Team/TeamSection";
-import { TestimonialsSection } from "@/components/containers/Testimonials/TestimonialsSection";
+import { FAQSection } from "@/components/features/landing/Faq/FAQSection";
+import { HeroSection } from "@/components/features/landing/Hero/HeroSection";
+import { HowItWorksSection } from "@/components/features/landing/HowItWork/HowItWorksSection";
+import { PartnersSection } from "@/components/features/landing/Partners/PartnersSection";
+import { ServiceIntro } from "@/components/features/landing/ServiceIntro/ServiceIntro";
+import { TeamSection } from "@/components/features/landing/Team/TeamSection";
+import { TestimonialsSection } from "@/components/features/landing/Testimonials/TestimonialsSection";
 
 export default function Home() {
   return (
