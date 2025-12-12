@@ -1,7 +1,7 @@
-import { ShipmentsOverview } from "@/components/containers/ShipmentsOverview/ShipmentsOverview";
-import { AvailableShipmentsContainer } from "@/components/containers/ShipmentsOverview/ui/available/AvailableShipmentsContainer";
+import { ShipmentsOverview } from "@/components/features/dashboard/ShipmentsOverview/ShipmentsOverview";
+import { AvailableShipmentsContainer } from "@/components/features/dashboard/ShipmentsOverview/ui/Available/AvailableShipmentsContainer";
 import { Metadata } from "next";
-import { BaseFilters } from "@/components/containers/FiltersBar/presets/BaseFilters";
+import { BaseFilters } from "@/components/features/dashboard/FiltersBar/presets/BaseFilters";
 
 export const metadata: Metadata = {
   title: "Available",

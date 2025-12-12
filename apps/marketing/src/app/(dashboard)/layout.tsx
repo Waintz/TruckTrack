@@ -1,5 +1,5 @@
-import { DashboardSidebarContainer } from "@/components/containers/DashboardSidebar/DashboardSidebarContainer";
-import { HeaderDashboard } from "@/components/containers/HeaderDashboard/HeaderDashboard";
+import { DashboardSidebarContainer } from "@/components/features/dashboard/DashboardSidebar/DashboardSidebarContainer";
+import { HeaderDashboard } from "@/components/features/dashboard/HeaderDashboard/HeaderDashboard";
 import clsx from "clsx";
 
 export default function DashboardLayout({

@@ -1,4 +1,4 @@
-import { TruckAvailablePage } from "@/components/containers/TruckPage/available/TruckAvailablePage";
+import { TruckAvailablePage } from "@/components/features/dashboard/TruckPage/Available/TruckAvailablePage";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs/Breadcrumbs";
 
 export default function Page() {

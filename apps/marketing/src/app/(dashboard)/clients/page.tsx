@@ -1,4 +1,4 @@
-import { DashboardClientsContainer } from "@/components/containers/DashboardClients/DashboardClientsContainer";
+import { DashboardClientsContainer } from "@/components/features/dashboard/DashboardClients/DashboardClientsContainer";
 
 export default function Page() {
   return (

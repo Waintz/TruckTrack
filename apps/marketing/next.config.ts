@@ -22,6 +22,10 @@ const nextConfig: NextConfig = {
         hostname: "192.168.240.1",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "truck-track-chi.vercel.app",
+      },
     ],
   },
   async redirects() {

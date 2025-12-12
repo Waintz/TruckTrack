@@ -1,5 +1,5 @@
-import { ICompanyInformation } from "@/components/containers/DashboardClients/types/company";
-import { CompanyInformation } from "@/components/containers/DashboardClients/ui/CompanyInformation/CompanyInformation";
+import { ICompanyInformation } from "@/components/features/dashboard/DashboardClients/types/company";
+import { CompanyInformation } from "@/components/features/dashboard/DashboardClients/ui/CompanyInformation/CompanyInformation";
 
 const company: ICompanyInformation = {
   id: "cmp_001",
